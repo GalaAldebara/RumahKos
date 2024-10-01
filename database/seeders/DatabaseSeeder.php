@@ -14,6 +14,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
+        $this->call([
+            M_levelSeeder::class,
+            M_userSeeder::class, // pastikan ini juga ada jika ingin seeding m_user
+        ]);
 
         User::factory()->create([
             'name' => 'Test User',
