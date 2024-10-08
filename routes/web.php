@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 
+Route::get('/nyobalogin', function () {
+    return view('login/index2');
+});
 
 Route::get('/', function () {
     return view('login/index');
