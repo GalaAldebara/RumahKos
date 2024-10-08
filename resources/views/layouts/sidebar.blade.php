@@ -16,22 +16,37 @@
       <span class="hide-menu">Menu</span>
     </li>
     <li class="sidebar-item">
-      <a class="sidebar-link" href="/income" aria-expanded="false">
-        <span>
-          <i class="ti ti-article"></i>
-        </span>
-        <span class="hide-menu">Income</span>
-      </a>
-    </li>
-    <li class="sidebar-item">
-      <a class="sidebar-link" href="/contract" aria-expanded="false">
-        <span>
-          <i class="ti ti-article"></i>
-        </span>
-        <span class="hide-menu">Contract</span>
-      </a>
-    </li>
-    
+        <a class="sidebar-link" href="/pemesanan-kamar" aria-expanded="false">
+          <span>
+            <i class="ti ti-home"></i>
+          </span>
+          <span class="hide-menu">Pemesanan Kamar</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link" href="/pembayaran-kamar" aria-expanded="false">
+          <span>
+            <i class="ti ti-wallet"></i>
+          </span>
+          <span class="hide-menu">Pembayaran Kamar</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link" href="/perpanjangan-kontrak" aria-expanded="false">
+          <span>
+            <i class="ti ti-file"></i>
+          </span>
+          <span class="hide-menu">Perpanjangan Kontrak</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link" href="/pengunduran-diri" aria-expanded="false">
+          <span>
+            <i class="ti ti-user-x"></i>
+          </span>
+          <span class="hide-menu">Pengunduran Diri</span>
+        </a>
+      </li>
     <li class="nav-small-cap">
       <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
       <span class="hide-menu">AUTH</span>
@@ -52,5 +67,5 @@
         <span class="hide-menu">Logout</span>
       </a>
     </li>
-   
+
   </ul>

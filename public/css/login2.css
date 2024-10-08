@@ -89,7 +89,21 @@ body{
     cursor: pointer;
 }
 
+.form-container.sign-in h1 {
+    margin-bottom: 30px;
+}
 
+.form-container.sign-in input {
+    margin-bottom: 20px;
+}
+
+.form-container.sign-up h1 {
+    margin-bottom: 30px;
+}
+
+.form-container.sign-up input {
+    margin-bottom: 20px;
+}
 
 .container button.hidden{
     background-color: transparent;
@@ -239,3 +253,12 @@ body{
 .container.active .toggle-right{
     transform: translateX(200%);
 }
+
+/* Styling untuk logo */
+.logo {
+    display: block;
+    margin: 0 auto 20px auto; /* Mengatur agar logo berada di tengah dan memberi jarak bawah */
+    width: 300px; /* Atur ukuran sesuai kebutuhan */
+    height: auto; /* Menjaga proporsi logo */
+}
+
