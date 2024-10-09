@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
             M_userSeeder::class, // pastikan ini juga ada jika ingin seeding m_user
         ]);
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
     }
 }

@@ -14,7 +14,7 @@ class m_userSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('m_user')->insert([
+        DB::table('users')->insert([
             [
                 'username' => 'Admin',
                 'nama' => 'Administrator',
@@ -32,10 +32,10 @@ class m_userSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'username' => 'Yusriyah',
+                'username' => 'yusriyah',
                 'nama' => 'Yusriyah Firjatullah',
                 'level_id' => 3,
-                'password' => Hash::make('password3'),
+                'password' => Hash::make('12345'),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

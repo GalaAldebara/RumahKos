@@ -45,12 +45,22 @@
         </a>
     </li>
     <li class="sidebar-item">
-      <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+      {{-- <a class="sidebar-link" href="/logout" aria-expanded="false">
         <span>
           <i class="ti ti-login"></i>
         </span>
         <span class="hide-menu">Logout</span>
-      </a>
+      </a> --}}
+      <form action="/logout" method="POST">
+        @csrf
+        <button type="submit" class="sidebar-link" style="background: none; border: none; font: inherit; color: inherit; cursor: pointer;">
+            <span>
+                <i class="ti ti-login"></i>
+            </span>
+            <span class="hide-menu">Logout</span>
+        </button>
+    </form>
+    
     </li>
    
   </ul>

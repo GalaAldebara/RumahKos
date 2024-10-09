@@ -12,17 +12,23 @@ class LoginController extends Controller
         return view('/login.index');
     }
 
+    public function username()
+    {
+        return 'username';
+    }
+
     public function authenticate(Request $request)
     {
+
         $credentials = $request->validate([
-            'nik' => ['required'],
+            'username' => ['required'],
             'password' => ['required'],
         ]);
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/home');
+            return redirect()->intended('/income');
         }
 
         return back()->with('loginError', 'Login failed!');
