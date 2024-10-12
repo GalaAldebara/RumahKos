@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GoogleAuthController;
+use App\Http\Controllers\KamarController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PemesananKamarController;
@@ -28,9 +29,19 @@ Route::get('/contract', function () {
     return view('contract/index');
 });
 
+Route::get('/kamar', [KamarController::class, 'index']);
+Route::get('/kamar/create', [KamarController::class, 'create']);
+Route::post('/kamar/create', [KamarController::class, 'store']);
+Route::get('/kamar/{id}/edit', [KamarController::class, 'edit']);
+Route::put('/kamar/{id}', [KamarController::class, 'update']);
+Route::delete('/kamar/{id}', [KamarController::class, 'destroy']);
+
+
 
 Route::get('/penghuni', [UserController::class, 'index']);
-Route::resource('penghuni', UserController::class);
+
+Route::get('/penghuni/{id}/edit', [UserController::class, 'edit']);
+// Route::resource('penghuni', UserController::class);
 
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');

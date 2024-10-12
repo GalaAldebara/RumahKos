@@ -43,9 +43,10 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit(string $id)
     {
-        return view('penghuni.edit', compact('user'));
+        $user = User::find($id);
+        return view('penghuni.edit', ['user' => $user]);
     }
 
     /**

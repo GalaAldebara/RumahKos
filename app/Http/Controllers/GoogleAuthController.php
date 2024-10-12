@@ -23,6 +23,7 @@ class GoogleAuthController extends Controller
 
             if (!$user) {
                 $new_user = User::create([
+                    'username' => $google_user->getNickname(),
                     'nama' => $google_user->getName(),
                     'email' => $google_user->getEmail(),
                     'google_id' => $google_user->getId(),

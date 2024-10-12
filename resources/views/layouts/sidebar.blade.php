@@ -16,6 +16,14 @@
       <span class="hide-menu">Menu</span>
     </li>
     <li class="sidebar-item">
+        <a class="sidebar-link" href="/kamar" aria-expanded="false">
+          <span>
+            <i class="ti ti-home"></i>
+          </span>
+          <span class="hide-menu">Kamar</span>
+        </a>
+      </li>
+    <li class="sidebar-item">
         <a class="sidebar-link" href="/penghuni" aria-expanded="false">
           <span>
             <i class="ti ti-home"></i>

@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Edit Penghuni Kos</h5>
-                <form action="{{ route('penghuni.update', $user->user_id) }}" method="POST">
+                <form action="">
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
@@ -21,7 +21,7 @@
 
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-                        <a href="{{ route('penghuni.index') }}" class="btn btn-secondary">Batal</a>
+                        <a href="" class="btn btn-secondary">Batal</a>
                     </div>
                 </form>
             </div>

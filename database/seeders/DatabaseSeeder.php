@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
         $this->call([
+            M_kamarSeeder::class,
             M_levelSeeder::class,
             M_userSeeder::class, // pastikan ini juga ada jika ingin seeding m_user
         ]);
