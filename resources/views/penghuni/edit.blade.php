@@ -18,7 +18,6 @@
                         <label for="nama" class="form-label">Nama</label>
                         <input type="text" class="form-control" id="nama" name="nama" value="{{ old('nama', $user->nama) }}" required>
                     </div>
-
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                         <a href="{{ route('penghuni.index') }}" class="btn btn-secondary">Batal</a>
