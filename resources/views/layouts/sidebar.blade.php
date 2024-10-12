@@ -23,6 +23,14 @@
           <span class="hide-menu">Pemesanan Kamar</span>
         </a>
       </li>
+    <li class="sidebar-item">
+        <a class="sidebar-link" href="/pemesanan-kamar" aria-expanded="false">
+          <span>
+            <i class="ti ti-home"></i>
+          </span>
+          <span class="hide-menu">Pemesanan Kamar</span>
+        </a>
+      </li>
       <li class="sidebar-item">
         <a class="sidebar-link" href="/pembayaran-kamar" aria-expanded="false">
           <span>
