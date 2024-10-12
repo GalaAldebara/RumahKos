@@ -22,7 +22,6 @@
                 <input type="text" name="nama" id="nama" placeholder="nama" autocomplete="off" required value="{{ old('nama') }}">
                 <input type="password" name="password" id="password" placeholder="password" autocomplete="off" required >
             
-                <input type="password" placeholder="Password">
                 <button type="submit" class="btn-signup">Sign Up</button>
             </form>
         </div>
