@@ -12,25 +12,32 @@
 <body>
 
     <div class="container" id="container">
+        @if (Route::is('register'))
         <div class="form-container sign-up">
-            <form>
+            <form method="POST" action="/register">
+                @csrf
                 <h1>Buat Akun!</h1>
                 <span>Buat username dan password anda</span>
-                <input type="text" placeholder="Name">
+                <input type="text" name="username" id="username" placeholder="username" autocomplete="off" required value="{{ old('username') }}">
+                <input type="text" name="nama" id="nama" placeholder="nama" autocomplete="off" required value="{{ old('nama') }}">
+                <input type="password" name="password" id="password" placeholder="password" autocomplete="off" required >
+            
                 <input type="password" placeholder="Password">
-                <button class="btn-signup">Sign Up</button>
+                <button type="submit" class="btn-signup">Sign Up</button>
             </form>
         </div>
+        @elseif (Route::is('login'))
         <div class="form-container sign-in">
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <img src="{{ asset('images/logos/matoangin.png') }}" alt="Matoangin Logo" class="logo">
                 <h1>Sign In Disini!</h1>
-                <input type="text" name="nik" placeholder="username" required>
-                <input type="password" name="password" placeholder="Password" required>
+                <input type="text" name="username" id="username" placeholder="username" required>
+                <input type="password" name="password" id="password" placeholder="Password" required>
                 <button type="submit" class="btn-login">Login</button>
             </form>
         </div>
+        @endif
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">

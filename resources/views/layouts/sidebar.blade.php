@@ -16,11 +16,19 @@
       <span class="hide-menu">Menu</span>
     </li>
     <li class="sidebar-item">
-        <a class="sidebar-link" href="/pemesanan-kamar" aria-expanded="false">
+        <a class="sidebar-link" href="/penghuni" aria-expanded="false">
           <span>
             <i class="ti ti-home"></i>
           </span>
-          <span class="hide-menu">Pemesanan Kamar</span>
+          <span class="hide-menu">Penghuni</span>
+        </a>
+      </li>
+    <li class="sidebar-item">
+        <a class="sidebar-link" href="/income" aria-expanded="false">
+          <span>
+            <i class="ti ti-home"></i>
+          </span>
+          <span class="hide-menu">Pemasukan</span>
         </a>
       </li>
     <li class="sidebar-item">
