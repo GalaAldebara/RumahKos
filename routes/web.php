@@ -14,9 +14,9 @@ Route::get('/nyobalogin', function () {
     return view('login/index2');
 });
 
-Route::get('/', function () {
-    return view('login/index2');
-});
+// Route::get('/', function () {
+//     return view('login/index2');
+// });
 
 Route::get('/register', function () {
     return view('login/index2');
@@ -30,11 +30,13 @@ Route::get('/contract', function () {
 
 
 Route::get('/penghuni', [UserController::class, 'index']);
+Route::resource('penghuni', UserController::class);
 
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
+Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
