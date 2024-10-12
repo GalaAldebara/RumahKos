@@ -12,7 +12,6 @@
 <body>
 
     <div class="container" id="container">
-        @if (Route::is('register'))
         <div class="form-container sign-up">
             <form method="POST" action="/register">
                 @csrf
@@ -25,7 +24,6 @@
                 <button type="submit" class="btn-signup">Sign Up</button>
             </form>
         </div>
-        @elseif (Route::is('login'))
         <div class="form-container sign-in">
             <form method="POST" action="{{ route('login') }}">
                 @csrf
@@ -35,8 +33,8 @@
                 <input type="password" name="password" id="password" placeholder="Password" required>
                 <button type="submit" class="btn-login">Login</button>
             </form>
+            
         </div>
-        @endif
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
@@ -44,11 +42,18 @@
                     <p>Masukkan data kamu untuk menggunakan berbagai fitur!</p>
                     <button class="hidden" id="login">Sign In</button>
                 </div>
+               
                 <div class="toggle-panel toggle-right">
                     <h1>Hai Customer!</h1>
                     <p>Registrasi disini jika belum ada akun</p>
                     <button class="hidden" id="register">Sign Up</button>
                 </div>
+                <div class="toggle-panel toggle-right">
+                    <a href="{{ route('google-auth') }}">
+                        <span>continue with google</span>
+                    </a>
+                </div>
+                
             </div>
         </div>
     </div>

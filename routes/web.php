@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GoogleAuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PemesananKamarController;
@@ -47,3 +48,7 @@ Route::get('/pemesanan-kamar', [PemesananKamarController::class, 'index']);
 Route::get('/pembayaran-kamar', [PembayaranKamarController::class, 'index']);
 Route::get('/perpanjangan-kontrak', [PerpanjanganKontrakController::class, 'index']);
 Route::get('/pengunduran-diri', [PengunduranDiriController::class, 'index']);
+
+
+Route::get('auth/google', [GoogleAuthController::class, 'redirect'])->name('google-auth');
+Route::get('auth/google/call-back', [GoogleAuthController::class, 'callbackGoogle']);
