@@ -45,7 +45,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('penghuni.edit', compact('user'));
     }
 
     /**
@@ -53,7 +53,16 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $request->validate([
+            'username' => 'required|string|max:20|unique:users,username,' . $user->id,
+            'nama' => 'required|string|max:50',
+        ]);
+
+        $user->update([
+            'username' => $request->input('username'),
+            'nama' => $request->input('nama'),
+        ]);
+        return redirect()->route('penghuni.index')->with('success', 'Data penghuni berhasil diperbarui');
     }
 
     /**
@@ -61,6 +70,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect()->route('penghuni.index')->with('success', 'Data penghuni berhasil dihapus');
     }
 }
