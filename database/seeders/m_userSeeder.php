@@ -15,46 +15,41 @@ class m_userSeeder extends Seeder
     public function run(): void
     {
         DB::table('users')->insert([
-            // [
-            //     'username' => 'Admin',
-            //     'nama' => 'Administrator',
-            //     'level_id' => 1,
-            //     'password' => Hash::make('password1'),
-            //     'created_at' => now(),
-            //     'updated_at' => now(),
-            // ],
-            // [
-            //     'username' => 'Owner',
-            //     'nama' => 'Irza',
-            //     'level_id' => 2,
-            //     'password' => Hash::make('password2'),
-            //     'created_at' => now(),
-            //     'updated_at' => now(),
-            // ],
-            // [
-            //     'username' => 'yusriyah',
-            //     'nama' => 'Yusriyah Firjatullah',
-            //     'level_id' => 3,
-            //     'password' => Hash::make('12345'),
-            //     'created_at' => now(),
-            //     'updated_at' => now(),
-            // ],
-            // [
-            //     'username' => 'Makmur',
-            //     'nama' => 'Muhammad Iqbal Makmur Al-Muniri',
-            //     'level_id' => 3,
-            //     'password' => Hash::make('password4'),
-            //     'created_at' => now(),
-            //     'updated_at' => now(),
-            // ],
-            // [
-            //     'username' => 'Arya',
-            //     'nama' => 'Arya Bagus Pratama',
-            //     'level_id' => 3,
-            //     'password' => Hash::make('password5'),
-            //     'created_at' => now(),
-            //     'updated_at' => now(),
-            // ]
+            [
+                'nama' => 'Administrator',
+                'level_id' => 1,
+                'password' => Hash::make('password1'),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'nama' => 'Irza',
+                'level_id' => 2,
+                'password' => Hash::make('password2'),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'nama' => 'Yusriyah Firjatullah',
+                'level_id' => 3,
+                'password' => Hash::make('12345'),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'nama' => 'Muhammad Iqbal Makmur Al-Muniri',
+                'level_id' => 3,
+                'password' => Hash::make('password4'),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'nama' => 'Arya Bagus Putra Pratama',
+                'level_id' => 3,
+                'password' => Hash::make('password5'),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
         ]);
     }
 }

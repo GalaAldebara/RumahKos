@@ -15,9 +15,6 @@
                     <h6 class="fw-semibold mb-0">Id</h6>
                   </th>
                   <th class="border-bottom-0">
-                    <h6 class="fw-semibold mb-0">Assigned</h6>
-                  </th>
-                  <th class="border-bottom-0">
                     <h6 class="fw-semibold mb-0">Name</h6>
                   </th>
                   <th class="border-bottom-0">
@@ -32,10 +29,6 @@
                 <tr>
                   <td class="border-bottom-0">
                     <h6 class="fw-semibold mb-0">{{ $d->user_id }}</h6>
-                  </td>
-                  <td class="border-bottom-0">
-                      <h6 class="fw-semibold mb-1">{{ $d->username }}</h6>
-                      <span class="fw-normal">Web Designer</span>
                   </td>
                   <td class="border-bottom-0">
                     <p class="mb-0 fw-normal">{{ $d->nama }}</p>
