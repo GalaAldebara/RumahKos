@@ -11,8 +11,8 @@ use App\Http\Controllers\PengunduranDiriController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 
-Route::get('/nyobalogin', function () {
-    return view('login/index2');
+Route::get('/nyoba', function () {
+    return view('penghuni/edit');
 });
 
 // Route::get('/', function () {
@@ -42,6 +42,8 @@ Route::get('/penghuni', [UserController::class, 'index']);
 
 Route::get('/penghuni/{id}/edit', [UserController::class, 'edit']);
 // Route::resource('penghuni', UserController::class);
+
+
 
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');

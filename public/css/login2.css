@@ -62,7 +62,7 @@ body{
 }
 
 .container button.btn-login {
-    background-color: #852cf4; /* Warna ungu untuk tombol Login */
+    background-color: #852cf4;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -76,7 +76,7 @@ body{
 }
 
 .container button.btn-signup {
-    background-color: #037ffc; /* Warna biru untuk tombol Sign Up */
+    background-color: #037ffc;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -254,11 +254,37 @@ body{
     transform: translateX(200%);
 }
 
-/* Styling untuk logo */
 .logo {
     display: block;
-    margin: 0 auto 20px auto; /* Mengatur agar logo berada di tengah dan memberi jarak bawah */
-    width: 300px; /* Atur ukuran sesuai kebutuhan */
-    height: auto; /* Menjaga proporsi logo */
+    margin: 0 auto 20px auto;
+    width: 300px;
+    height: auto;
+}
+
+.form-container.sign-in h1 {
+    margin-bottom: 3px;
+}
+
+.form-container.sign-up h1 {
+    margin-bottom: 1px;
+}
+
+.form-container.sign-up .google-login {
+    margin-top: 5px;
+}
+
+.form-container.sign-up span {
+    display: block;
+    margin-top: 10px;
+}
+
+.google-login {
+    margin-top: 5px;
+}
+
+.google-login .google-logo {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
 }
 
