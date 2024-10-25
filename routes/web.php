@@ -4,8 +4,10 @@ use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\KamarController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PemasukanController;
 use App\Http\Controllers\PemesananKamarController;
 use App\Http\Controllers\PembayaranKamarController;
+use App\Http\Controllers\PenghuniController;
 use App\Http\Controllers\PerpanjanganKontrakController;
 use App\Http\Controllers\PengunduranDiriController;
 use App\Http\Controllers\RegisterController;
@@ -38,7 +40,7 @@ Route::delete('/kamar/{id}', [KamarController::class, 'destroy']);
 
 
 
-Route::get('/penghuni', [UserController::class, 'index']);
+Route::get('/penghuni', [PenghuniController::class, 'index']);
 
 Route::get('/penghuni/{id}/edit', [UserController::class, 'edit']);
 // Route::resource('penghuni', UserController::class);
@@ -55,11 +57,12 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 
-Route::get('/income', function () {
-    return view('income/index');
-});
+
+
+Route::get('/income', [PemasukanController::class, 'index']);
 
 Route::get('/pemesanan-kamar', [PemesananKamarController::class, 'index']);
+Route::post('/pemesanan-kamar/create', [PemesananKamarController::class, 'store']);
 Route::get('/pembayaran-kamar', [PembayaranKamarController::class, 'index']);
 Route::get('/perpanjangan-kontrak', [PerpanjanganKontrakController::class, 'index']);
 Route::get('/pengunduran-diri', [PengunduranDiriController::class, 'index']);

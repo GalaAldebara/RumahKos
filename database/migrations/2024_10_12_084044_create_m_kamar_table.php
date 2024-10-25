@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('luas');
             $table->string('fasilitas');
             $table->integer('harga');
+            $table->date('dibooking_sampai')->nullable();
 
             $table->timestamps();
         });
