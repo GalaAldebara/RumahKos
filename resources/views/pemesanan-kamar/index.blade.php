@@ -5,12 +5,13 @@
     <div class="col-lg-12 mt-4">
         <h5 class="mb-4 fw-semibold">Daftar Kamar Kost</h5>
         <div class="row">
+            @foreach ($data as $d)   
             <div class="col-md-3 mb-4">
                 <div class="card">
                     <img src="{{ asset('images/products/kamar-kost.jpeg') }}" class="card-img-top" alt="Kamar Kost">
                     <div class="card-body">
-                        <h5 class="card-title">Kost Singgahsini Tenggilis Mejoyo</h5>
-                        <p class="card-text">Putra • WiFi • AC • Kloset Duduk • Kasur</p>
+                        <h5 class="card-title">{{ $d->nama }}</h5>
+                        <p class="card-text">{{ $d->fasilitas }}</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <p class="text-muted mb-0">Rating: <span class="text-success">4.8</span></p>
                             <button class="btn btn-primary btn-lm" data-bs-toggle="modal" data-bs-target="#bookingModal">Pesan</button>
@@ -18,90 +19,9 @@
                     </div>
                 </div>
             </div>
+            @endforeach
 
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="{{ asset('images/products/kamar-kost.jpeg') }}" class="card-img-top" alt="Kamar Kost">
-                    <div class="card-body">
-                        <h5 class="card-title">Kost Singgahsini Tenggilis Mejoyo</h5>
-                        <p class="card-text">Putra • WiFi • AC • Kloset Duduk • Kasur</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="text-muted mb-0">Rating: <span class="text-success">4.8</span></p>
-                            <button class="btn btn-primary btn-lm" data-bs-toggle="modal" data-bs-target="#bookingModal">Pesan</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="{{ asset('images/products/kamar-kost.jpeg') }}" class="card-img-top" alt="Kamar Kost">
-                    <div class="card-body">
-                        <h5 class="card-title">Kost Singgahsini Tenggilis Mejoyo</h5>
-                        <p class="card-text">Putra • WiFi • AC • Kloset Duduk • Kasur</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="text-muted mb-0">Rating: <span class="text-success">4.8</span></p>
-                            <button class="btn btn-primary btn-lm" data-bs-toggle="modal" data-bs-target="#bookingModal">Pesan</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="{{ asset('images/products/kamar-kost.jpeg') }}" class="card-img-top" alt="Kamar Kost">
-                    <div class="card-body">
-                        <h5 class="card-title">Kost Singgahsini Tenggilis Mejoyo</h5>
-                        <p class="card-text">Putra • WiFi • AC • Kloset Duduk • Kasur</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="text-muted mb-0">Rating: <span class="text-success">4.8</span></p>
-                            <button class="btn btn-primary btn-lm" data-bs-toggle="modal" data-bs-target="#bookingModal">Pesan</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="{{ asset('images/products/kamar-kost.jpeg') }}" class="card-img-top" alt="Kamar Kost">
-                    <div class="card-body">
-                        <h5 class="card-title">Kost Singgahsini Tenggilis Mejoyo</h5>
-                        <p class="card-text">Putra • WiFi • AC • Kloset Duduk • Kasur</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="text-muted mb-0">Rating: <span class="text-success">4.8</span></p>
-                            <button class="btn btn-primary btn-lm" data-bs-toggle="modal" data-bs-target="#bookingModal">Pesan</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="{{ asset('images/products/kamar-kost.jpeg') }}" class="card-img-top" alt="Kamar Kost">
-                    <div class="card-body">
-                        <h5 class="card-title">Kost Singgahsini Tenggilis Mejoyo</h5>
-                        <p class="card-text">Putra • WiFi • AC • Kloset Duduk • Kasur</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="text-muted mb-0">Rating: <span class="text-success">4.8</span></p>
-                            <button class="btn btn-primary btn-lm" data-bs-toggle="modal" data-bs-target="#bookingModal">Pesan</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="{{ asset('images/products/kamar-kost.jpeg') }}" class="card-img-top" alt="Kamar Kost">
-                    <div class="card-body">
-                        <h5 class="card-title">Kost Singgahsini Tenggilis Mejoyo</h5>
-                        <p class="card-text">Putra • WiFi • AC • Kloset Duduk • Kasur</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="text-muted mb-0">Rating: <span class="text-success">4.8</span></p>
-                            <button class="btn btn-primary btn-lm" data-bs-toggle="modal" data-bs-target="#bookingModal">Pesan</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>
@@ -122,7 +42,7 @@
                         <form id="bookingForm">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Nama</label>
-                                <input type="text" class="form-control" id="name" placeholder="Masukkan nama" required>
+                                <input type="text" class="form-control" id="name" placeholder="Masukkan nama" value="{{ Auth::user()->nama }}" required>
                             </div>
                             <div class="mb-3">
                                 <label for="address" class="form-label">Alamat Tempat Tinggal</label>
