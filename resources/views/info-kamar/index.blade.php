@@ -36,6 +36,9 @@
                     <h6 class="fw-semibold mb-0">Harga</h6>
                   </th>
                   <th class="border-bottom-0">
+                    <h6 class="fw-semibold mb-0">Status</h6>
+                  </th>
+                  <th class="border-bottom-0">
                     <h6 class="fw-semibold mb-0">Action</h6>
                   </th>
                 </tr>
@@ -64,6 +67,16 @@
                   <td class="border-bottom-0">
                     <p class="mb-0 fw-normal">{{ $d->harga }}</p>
                   </td>
+                  <td class="border-bottom-0">
+                    <div class="d-flex align-items-center gap-2">
+                      @if ($d->dibooking_sampai && $d->dibooking_sampai > now())
+                      <span class="badge bg-danger rounded-3 fw-semibold">Dibooking</span>
+                      @else
+                      <span class="badge bg-primary rounded-3 fw-semibold">Tersedia</span>
+                      @endif
+                    </div>
+                  </td>
+                  
                   <td class="border-bottom-0">
                     <a href="kamar/{{ $d->kamar_id }}/edit" class="btn btn-warning">Edit</a>
                     <form action="kamar/{{$d->kamar_id }}" method="POST" style="display: inline;">
