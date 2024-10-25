@@ -75,9 +75,10 @@
             const signUpForm = document.querySelector('.form-container.sign-up form');
 
             signUpForm.addEventListener('submit', function(event) {
-                event.preventDefault();
+                event.preventDefault(); // Mencegah pengiriman form biasa
                 const formData = new FormData(signUpForm);
 
+                // Hapus pesan kesalahan sebelumnya
                 document.querySelectorAll('.error-message').forEach(function(message) {
                     message.remove();
                 });
@@ -93,14 +94,14 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        alert('Pendaftaran berhasil! Silakan login.');
-
-                        window.location.href = '/login';
+                        // Jika pendaftaran berhasil, arahkan ke halaman login
+                        window.location.href = '/login'; // Ganti dengan URL login yang benar
                     } else {
+                        // Tampilkan pesan kesalahan di bawah input yang relevan
                         Object.keys(data.errors).forEach(function(key) {
                             const inputElement = document.getElementById(key);
                             const errorMessage = document.createElement('div');
-                            errorMessage.textContent = data.errors[key][0];
+                            errorMessage.textContent = data.errors[key][0]; // Ambil pesan pertama
                             errorMessage.classList.add('error-message');
                             inputElement.parentNode.insertBefore(errorMessage, inputElement.nextSibling);
                         });

@@ -1,0 +1,19 @@
+.confirmation-modal {
+    border: 2px solid #6484fc; /* Border berwarna biru */
+    background-color: #f5f5f5; /* Warna latar belakang abu-abu terang */
+    text-align: center;
+}
+
+.confirmation-icon {
+    font-size: 50px;
+    color: #6484fc;
+}
+
+.label {
+    margin-right: 20px; /* Atur spasi sesuai kebutuhan */
+}
+
+
+
+
+
