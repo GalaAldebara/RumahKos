@@ -102,7 +102,7 @@ body{
 }
 
 .form-container.sign-up input {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .container button.hidden{
@@ -288,3 +288,12 @@ body{
     margin-right: 10px;
 }
 
+.error-message {
+    font-size: 0.8rem;
+    color: red;
+    margin-top: 5px;
+    margin-bottom: 0;
+    display: block;
+    line-height: 1.2;
+    vertical-align: middle;
+}

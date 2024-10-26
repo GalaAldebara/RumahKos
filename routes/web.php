@@ -1,17 +1,18 @@
 <?php
 
-use App\Http\Controllers\GoogleAuthController;
-use App\Http\Controllers\KamarController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\KamarController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PenghuniController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PemasukanController;
+use App\Http\Controllers\GoogleAuthController;
+use App\Http\Controllers\DetailKamarController;
 use App\Http\Controllers\PemesananKamarController;
 use App\Http\Controllers\PembayaranKamarController;
-use App\Http\Controllers\PenghuniController;
-use App\Http\Controllers\PerpanjanganKontrakController;
 use App\Http\Controllers\PengunduranDiriController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\PerpanjanganKontrakController;
 
 Route::get('/nyoba', function () {
     return view('penghuni/edit');
@@ -64,7 +65,12 @@ Route::get('/income', [PemasukanController::class, 'index']);
 Route::get('/pemesanan-kamar', [PemesananKamarController::class, 'index']);
 Route::post('/pemesanan-kamar/create', [PemesananKamarController::class, 'store']);
 Route::get('/pembayaran-kamar', [PembayaranKamarController::class, 'index']);
+
 Route::get('/perpanjangan-kontrak', [PerpanjanganKontrakController::class, 'index']);
+Route::post('/perpanjangan-kontrak', [PerpanjanganKontrakController::class, 'store'])->name('perpanjangan_kontrak');
+Route::post('/pemberhentian-kontrak', [PerpanjanganKontrakController::class, 'storePemberhentian'])->name('pemberhentian_kontrak');
+Route::get('/detail-kamar', [DetailKamarController::class, 'index']);
+
 Route::get('/pengunduran-diri', [PengunduranDiriController::class, 'index']);
 
 
