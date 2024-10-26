@@ -18,7 +18,7 @@
               <thead class="text-dark fs-4">
                 <tr>
                   <th class="border-bottom-0">
-                    <h6 class="fw-semibold mb-0">Id</h6>
+                    <h6 class="fw-semibold mb-0">No</h6>
                   </th>
                   <th class="border-bottom-0">
                     <h6 class="fw-semibold mb-0">Nama</h6>
@@ -70,7 +70,7 @@
                   <td class="border-bottom-0">
                     <div class="d-flex align-items-center gap-2">
                       @if ($d->dibooking_sampai && $d->dibooking_sampai > now())
-                      <span class="badge bg-danger rounded-3 fw-semibold">Dibooking</span>
+                      <span class="badge bg-danger rounded-3 fw-semibold">Dipesan</span>
                       @else
                       <span class="badge bg-primary rounded-3 fw-semibold">Tersedia</span>
                       @endif

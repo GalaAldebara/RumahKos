@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email')->unique()->nullable();
             $table->string('email_verified_at')->nullable();
             $table->string('google_id')->nullable();
-            $table->unsignedBigInteger('level_id')->nullable();
+            $table->integer('level_id')->nullable();
             $table->string('password', 100)->nullable();
 
             $table->timestamps();

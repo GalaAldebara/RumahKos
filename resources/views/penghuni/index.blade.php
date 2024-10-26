@@ -67,13 +67,21 @@
                   </td>
 
                   <td class="border-bottom-0">
+                    {{-- <a href="penghuni/{{ $d->user_id }}/edit" class="btn btn-warning">Edit</a> --}}
+                    <form action="" method="POST" style="display: inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data?')">Keluarkan</button>
+                    </form>
+                  </td>
+                  {{-- <td class="border-bottom-0">
                     <a href="penghuni/{{ $d->user_id }}/edit" class="btn btn-warning">Edit</a>
                     <form action="" method="POST" style="display: inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data?')">Hapus</button>
                     </form>
-                  </td>
+                  </td> --}}
                 </tr>
                 @endforeach
               </tbody>
