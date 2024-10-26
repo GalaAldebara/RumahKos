@@ -16,5 +16,21 @@ class PerpanjanganKontrakController extends Controller
         return view('perpanjangan-kontrak.create');
     }
 
-    public function store(Request $request) {}
+    public function store(Request $request)
+    {
+        $request->validate([
+            'durasi' => 'required|integer|min:1'
+        ]);
+
+        return redirect()->back()->with('success', 'Kontrak berhasil diperpanjang');
+    }
+
+    public function storePemberhentian(Request $request)
+    {
+        $request->validate([
+            'alasan' => 'required|string|max:255'
+        ]);
+
+        return redirect()->back()->with('success', 'Kontrak berhasil dihentikan');
+    }
 }
