@@ -16,7 +16,7 @@
       <span class="hide-menu">Menu</span>
     </li>
     @can('is-admin')
-        
+
     <li class="sidebar-item">
         <a class="sidebar-link" href="/kamar" aria-expanded="false">
           <span>
@@ -61,18 +61,18 @@
       </a>
     </li>
     @endif
-    
-    
-      
+
+
+
       <li class="sidebar-item">
-        <a class="sidebar-link" href="/perpanjangan-kontrak" aria-expanded="false">
+        <a class="sidebar-link" href="/detail-kamar" aria-expanded="false">
           <span>
             <i class="ti ti-file"></i>
           </span>
-          <span class="hide-menu">Perpanjangan Kontrak</span>
+          <span class="hide-menu">Detail Kamar</span>
         </a>
       </li>
-     
+
     <li class="nav-small-cap">
       <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
       <span class="hide-menu">AUTH</span>

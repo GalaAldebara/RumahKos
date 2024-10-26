@@ -18,10 +18,6 @@ Route::get('/nyoba', function () {
     return view('penghuni/edit');
 });
 
-// Route::get('/', function () {
-//     return view('login/index2');
-// });
-
 Route::get('/register', function () {
     return view('login/index2');
 });

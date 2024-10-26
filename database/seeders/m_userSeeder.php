@@ -38,15 +38,22 @@ class m_userSeeder extends Seeder
             ],
             [
                 'nama' => 'Muhammad Iqbal Makmur Al-Muniri',
-                'level_id' => 3,
+                'level_id' => 2,
                 'password' => Hash::make('password4'),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'nama' => 'Arya Bagus Putra Pratama',
-                'level_id' => 3,
+                'level_id' => 2,
                 'password' => Hash::make('password5'),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'nama' => 'Dido',
+                'level_id' => 2,
+                'password' => Hash::make('12345'),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]
