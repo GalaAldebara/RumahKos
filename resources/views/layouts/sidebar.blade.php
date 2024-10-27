@@ -60,6 +60,14 @@
         <span class="hide-menu">Pembayaran Kamar</span>
       </a>
     </li>
+    <li class="sidebar-item">
+      <a class="sidebar-link" href="/detail-kamar" aria-expanded="false">
+        <span>
+          <i class="ti ti-file"></i>
+        </span>
+        <span class="hide-menu">Kamar Anda</span>
+      </a>
+    </li>
     @endif
       <li class="sidebar-item">
         <a class="sidebar-link" href="/detail-kamar" aria-expanded="false">

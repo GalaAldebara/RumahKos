@@ -70,8 +70,7 @@ Route::post('/perpanjangan-kontrak', [PerpanjanganKontrakController::class, 'sto
 Route::post('/pemberhentian-kontrak', [PerpanjanganKontrakController::class, 'storePemberhentian'])->name('pemberhentian_kontrak');
 
 Route::get('/detail-kamar', [DetailKamarController::class, 'index']);
-Route::get('/detail-kamar/{id}', [DetailKamarController::class, 'show'])->name('detail-kamar');
-
+Route::post('/detail-kamar/create', [DetailKamarController::class, 'store']);
 
 Route::get('/pengunduran-diri', [PengunduranDiriController::class, 'index']);
 
