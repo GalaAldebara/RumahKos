@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="{{ asset('css/styles.min.css') }}" />
   <link rel="stylesheet" href="{{ asset('css/pemesanan-kamar.css') }}">
   <link rel="stylesheet" href="{{ asset('css/detail-kamar.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/update-profil.css') }}">
 </head>
 
 <body>

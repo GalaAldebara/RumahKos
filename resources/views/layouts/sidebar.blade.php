@@ -16,7 +16,7 @@
       <span class="hide-menu">Menu</span>
     </li>
     @can('is-admin')
-        
+
     <li class="sidebar-item">
         <a class="sidebar-link" href="/kamar" aria-expanded="false">
           <span>
@@ -69,12 +69,25 @@
       </a>
     </li>
     @endif
-    
-    
-      
-     
-     
-     
+      <li class="sidebar-item">
+        <a class="sidebar-link" href="/detail-kamar" aria-expanded="false">
+          <span>
+            <i class="ti ti-file"></i>
+          </span>
+          <span class="hide-menu">Detail Kamar</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link" href="/update-profil" aria-expanded="false">
+          <span class="icon-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+              <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM1 13s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm11-8.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+            </svg>
+          </span>
+          <span class="hide-menu">Update Profil</span>
+        </a>
+    </li>
+
     <li class="nav-small-cap">
       <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
       <span class="hide-menu">AUTH</span>

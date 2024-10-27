@@ -1,0 +1,9 @@
+.sidebar-link .icon-center {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+    padding-left: 4px;
+}
