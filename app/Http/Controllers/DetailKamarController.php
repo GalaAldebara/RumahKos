@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\KamarModel;
 use App\Models\PemesananModel;
 use App\Models\PenghuniModel;
+use App\Models\KamarModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
 class DetailKamarController extends Controller
-{
-    // public function index()
+{    // public function index()
     // {
     //     return view('detail-kamar.index');
     // }
@@ -21,6 +20,16 @@ class DetailKamarController extends Controller
         $data = PemesananModel::where('user', Auth::user()->user_id)->first();
         return view('detail-kamar.index', ['data' => $data]);
     }
+
+
+    public function show($id)
+    {
+        $kamar = KamarModel::findOrFail($id);
+
+        return view('detail-kamar.show', compact('kamar'));
+    }
+
+
 
     public function store(Request $request)
     {

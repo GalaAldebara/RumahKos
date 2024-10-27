@@ -1,0 +1,55 @@
+/* Mengatur font dan margin pada judul kamar */
+.kamar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4a90e2;
+    margin-bottom: 0.5rem;
+}
+
+.kamar-subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.galeri-menu {
+    display: flex;
+    gap: 8px;
+    margin-top: 1rem;
+}
+
+.galeri-menu button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+}
+
+.informasi-kamar {
+    margin-top: 1.5rem;
+}
+
+.harga-section {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.harga-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4a90e2;
+    margin-bottom: 0.5rem;
+}
+
+.harga-diskon {
+    font-size: 0.9rem;
+    color: #ff5a5f;
+    margin-bottom: 1rem;
+}
+
+.tombol-aksi {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
