@@ -57,8 +57,8 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 // Route Update Profil
-Route::get('/update-profil', [UpdateProfilController::class, 'index'])->name('update-profil.index');
-Route::post('/update-profil', [UpdateProfilController::class, 'update'])->name('update-profil.update');
+Route::get('/update-profil', [UpdateProfilController::class, 'index']);
+Route::put('/update-profil/{id}', [UpdateProfilController::class, 'update']);
 
 
 Route::get('/income', [PemasukanController::class, 'index']);
