@@ -28,19 +28,19 @@
                 </div>
                 <div class="mb-3">
                     <label for="nik" class="form-label">NIK</label>
-                    <input type="text" class="form-control" id="nik" name="nik" value="{{ old('nik', $user->nik ?? '') }}" required placeholder=" Contoh 35730500010002">
+                    <input type="text" class="form-control" id="nik" name="nik" value="{{ old('nik', $user->nik ?? '') }}" required placeholder="35730500010002">
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" value="{{ old('email', $user->email ?? '') }}" required>
+                    <input type="email" class="form-control" id="email" name="email" value="{{ old('email', $user->email ?? '') }}" required placeholder=" anggayunanda@gmail.com">
                 </div>
                 <div class="mb-3">
                     <label for="address" class="form-label">Alamat</label>
-                    <input type="text" class="form-control" id="address" name="address" value="{{ old('address', $user->address ?? '') }}">
+                    <input type="text" class="form-control" id="address" name="address" value="{{ old('address', $user->address ?? '') }}" placeholder= "Jl. Semanggi Barat">
                 </div>
                 <div class="mb-3">
                     <label for="contact_number" class="form-label">No telp</label>
-                    <input type="text" class="form-control" id="contact_number" name="contact_number" value="{{ old('contact_number', $user->contact_number ?? '') }}">
+                    <input type="text" class="form-control" id="contact_number" name="contact_number" value="{{ old('contact_number', $user->contact_number ?? '') }}" placeholder="+62 85816178961">
                 </div>
                 <div class="mb-3">
                     <label for="ktp" class="form-label">Upload KTP <span class="text-danger">*</span></label>

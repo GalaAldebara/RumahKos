@@ -68,7 +68,10 @@ Route::get('/pembayaran-kamar', [PembayaranKamarController::class, 'index']);
 Route::get('/perpanjangan-kontrak', [PerpanjanganKontrakController::class, 'index']);
 Route::post('/perpanjangan-kontrak', [PerpanjanganKontrakController::class, 'store'])->name('perpanjangan_kontrak');
 Route::post('/pemberhentian-kontrak', [PerpanjanganKontrakController::class, 'storePemberhentian'])->name('pemberhentian_kontrak');
+
 Route::get('/detail-kamar', [DetailKamarController::class, 'index']);
+Route::get('/detail-kamar/{id}', [DetailKamarController::class, 'show'])->name('detail-kamar');
+
 
 Route::get('/pengunduran-diri', [PengunduranDiriController::class, 'index']);
 
