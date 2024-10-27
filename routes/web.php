@@ -9,6 +9,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PemasukanController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\DetailKamarController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\UpdateProfilController;
 use App\Http\Controllers\PemesananKamarController;
 use App\Http\Controllers\PembayaranKamarController;
@@ -43,13 +44,14 @@ Route::get('/penghuni', [PenghuniController::class, 'index']);
 Route::get('/penghuni/{id}/edit', [UserController::class, 'edit']);
 // Route::resource('penghuni', UserController::class);
 
-
+// Landing Page
+Route::get('/', [LandingPageController::class, 'index'])->name('landing-page');
 
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/', [LoginController::class, 'index'])->name('login');
+// Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
@@ -68,7 +70,7 @@ Route::get('/pembayaran-kamar', [PembayaranKamarController::class, 'index']);
 Route::get('/perpanjangan-kontrak', [PerpanjanganKontrakController::class, 'index']);
 Route::post('/perpanjangan-kontrak', [PerpanjanganKontrakController::class, 'store'])->name('perpanjangan_kontrak');
 Route::post('/pemberhentian-kontrak', [PerpanjanganKontrakController::class, 'storePemberhentian'])->name('pemberhentian_kontrak');
-
+Route::get('/detail-kamar/{id}', [DetailKamarController::class, 'show']);
 Route::get('/detail-kamar', [DetailKamarController::class, 'index']);
 Route::post('/detail-kamar/create', [DetailKamarController::class, 'store']);
 

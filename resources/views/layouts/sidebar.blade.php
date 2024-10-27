@@ -70,14 +70,6 @@
     </li>
     @endif
       <li class="sidebar-item">
-        <a class="sidebar-link" href="/detail-kamar" aria-expanded="false">
-          <span>
-            <i class="ti ti-file"></i>
-          </span>
-          <span class="hide-menu">Detail Kamar</span>
-        </a>
-      </li>
-      <li class="sidebar-item">
         <a class="sidebar-link" href="/update-profil" aria-expanded="false">
           <span class="icon-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">

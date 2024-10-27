@@ -27,7 +27,7 @@
                                 <button class="btn btn-danger btn-lm" disabled>Terpesan</button>
                             @else
                                 <button class="btn btn-primary btn-lm" data-bs-toggle="modal" data-bs-target="#bookingModal" data-id="{{ $d->kamar_id }}" data-harga="{{ $d->harga }}">Pesan</button>
-                                <a href="{{ route('detail-kamar', ['id' => $d->kamar_id]) }}" class="btn btn-secondary btn-lm">Detail</a> <!-- Link ke halaman detail kamar -->
+                                <a href="/detail-kamar/{{ $d->kamar_id }}" class="btn btn-secondary btn-lm">Detail</a> <!-- Link ke halaman detail kamar -->
                             @endif
                         </div>
                     </div>
@@ -55,9 +55,9 @@
                         <form id="bookingForm" action="/pemesanan-kamar/create" method="POST">
                             @csrf
                             <input type="hidden" name="user" value="{{ Auth::user()->user_id }}">
-                            <input type="hidden" name="kamar" value="">
-                            <input type="hidden" name="harga" value="">
-                            <div class="mb-3">
+                            <input type="hidden" name="kamar" value="{{ $d->kamar_id }}">
+                            <input type="hidden" name="harga" value="{{ $d->harga }}">
+                            {{-- <div class="mb-3">
                                 <label for="name" class="form-label">Nama</label>
                                 <input type="text" class="form-control" id="name" placeholder="Masukkan nama" value="{{ Auth::user()->nama }}" required>
                             </div>
@@ -70,10 +70,20 @@
                                 <label for="nik" class="form-label">Nomor Induk Keluarga</label>
                                 <input type="text" class="form-control" id="nik" placeholder="Masukkan NIK" required>
                                 <span id="nikError" class="text-danger" style="display:none;">Isi data terlebih dahulu</span>
+                            </div> --}}
+                            <div class="mb-3">
+                                <label for="tanggal" class="form-label mt-3">Pilih Tanggal</label>
+                                <input type="date" id="tanggal" class="form-control" name="tanggal" min="<?php echo date('Y-m-d'); ?>"   max="<?php echo date('Y-m-d', strtotime('+1 week')); ?>">
                             </div>
                             <div class="mb-3">
-                                <label for="duration" class="form-label">Berapa lama tinggal?</label>
-                                <input type="number" class="form-control" id="duration" name="total_tinggal" placeholder="Misal: 1 bulan" required>
+                                <label for="duration" class="form-label">Durasi Sewa</label>
+                                <select id="durasi" name="total_tinggal" class="form-select">
+                                    <option value="1">Per 1 Bulan</option>
+                                    <option value="3">Per 3 Bulan</option>
+                                    <option value="6">Per 6 Bulan</option>
+                                    <option value="9">Per 9 Bulan</option>
+                                    <option value="12">Per Tahun</option>
+                                </select>
                             </div>
 
                             <button type="submit" class="btn btn-success" style="background-color:#6986fd">Kirim Pesanan</button>
