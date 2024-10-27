@@ -14,8 +14,16 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('user_id');
             $table->string('username', 20)->nullable();
-            $table->string('nama', 50);
+            $table->string('nama_depan', 50)->nullable();
+            $table->string('nama_belakang', 50)->nullable();
+            $table->string('no_telp', 50)->nullable();
+            $table->string('ktp', 50)->nullable();
+            $table->string('kota', 50)->nullable();
+            $table->string('provinsi', 50)->nullable();
+            $table->string('alamat', 50)->nullable();
+            $table->string('nik', 50)->nullable();
             $table->string('email')->unique()->nullable();
+            $table->string('gambar')->unique()->nullable();
             $table->string('email_verified_at')->nullable();
             $table->string('google_id')->nullable();
             $table->integer('level_id')->nullable();

@@ -12,18 +12,19 @@
             <div class="text-center mb-4">
                 <img src="{{ asset('images/profile/yusri.png') }}" alt="User Profile" class="rounded-circle profile-picture">
             </div>
-            <form action="{{ route('update-profil.update') }}" method="POST">
+            <form action="/update-profil/{{ $user->user_id }}" method="POST">
                 @csrf
+                @method('PUT')
 
                 <div class="row mb-3">
                     <div class="col-md-6">
-                        <label for="first_name" class="form-label">Nama Depan</label>
-                        <input type="text" class="form-control" id="first_name" name="first_name" value="{{ old('first_name', $user->first_name ?? '') }}" required>
+                        <label for="nama_depan" class="form-label">Nama Depan</label>
+                        <input type="text" class="form-control" id="nama_depan" name="nama_depan" value="{{ old('nama_depan', $user->nama_depan ?? '') }}" required>
                     </div>
 
                     <div class="col-md-6">
-                        <label for="last_name" class="form-label">Nama Belakang</label>
-                        <input type="text" class="form-control" id="last_name" name="last_name" value="{{ old('last_name', $user->last_name ?? '') }}" required>
+                        <label for="nama_belakang" class="form-label">Nama Belakang</label>
+                        <input type="text" class="form-control" id="nama_belakang" name="nama_belakang" value="{{ old('nama_belakang', $user->nama_belakang ?? '') }}" required>
                     </div>
                 </div>
                 <div class="mb-3">
@@ -35,12 +36,12 @@
                     <input type="email" class="form-control" id="email" name="email" value="{{ old('email', $user->email ?? '') }}" required>
                 </div>
                 <div class="mb-3">
-                    <label for="address" class="form-label">Alamat</label>
-                    <input type="text" class="form-control" id="address" name="address" value="{{ old('address', $user->address ?? '') }}">
+                    <label for="alamat" class="form-label">Alamat</label>
+                    <input type="text" class="form-control" id="alamat" name="alamat" value="{{ old('alamat', $user->alamat ?? '') }}">
                 </div>
                 <div class="mb-3">
-                    <label for="contact_number" class="form-label">No telp</label>
-                    <input type="text" class="form-control" id="contact_number" name="contact_number" value="{{ old('contact_number', $user->contact_number ?? '') }}">
+                    <label for="no_telp" class="form-label">No telp</label>
+                    <input type="text" class="form-control" id="no_telp" name="no_telp" value="{{ old('no_telp', $user->no_telp ?? '') }}">
                 </div>
                 <div class="mb-3">
                     <label for="ktp" class="form-label">Upload KTP <span class="text-danger">*</span></label>
@@ -62,12 +63,12 @@
 
                 <div class="row mb-3">
                     <div class="col-md-6">
-                        <label for="city" class="form-label">Kota</label>
-                        <input type="text" class="form-control" id="city" name="city" value="{{ old('city', $user->city ?? '') }}">
+                        <label for="kota" class="form-label">Kota</label>
+                        <input type="text" class="form-control" id="kota" name="kota" value="{{ old('kota', $user->kota ?? '') }}">
                     </div>
                     <div class="col-md-6">
-                        <label for="province" class="form-label">Provinsi</label>
-                        <input type="text" class="form-control" id="province" name="province" value="{{ old('province', $user->province ?? '') }}">
+                        <label for="provinsi" class="form-label">Provinsi</label>
+                        <input type="text" class="form-control" id="provinsi" name="provinsi" value="{{ old('provinsi', $user->provinsi ?? '') }}">
                     </div>
                 </div>
 
@@ -79,7 +80,7 @@
 
                 <!-- Action Buttons -->
                 <div class="d-flex justify-content-between mt-4">
-                    <a href="{{ url()->previous() }}" class="btn btn-outline-secondary">Cancel</a>
+                    {{-- <a href="{{ url()->previous() }}" class="btn btn-outline-secondary">Cancel</a> --}}
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </form>
