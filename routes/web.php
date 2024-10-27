@@ -9,6 +9,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PemasukanController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\DetailKamarController;
+use App\Http\Controllers\UpdateProfilController;
 use App\Http\Controllers\PemesananKamarController;
 use App\Http\Controllers\PembayaranKamarController;
 use App\Http\Controllers\PengunduranDiriController;
@@ -53,7 +54,9 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-
+// Route Update Profil
+Route::get('/update-profil', [UpdateProfilController::class, 'index'])->name('update-profil.index');
+Route::post('/update-profil', [UpdateProfilController::class, 'update'])->name('update-profil.update');
 
 
 Route::get('/income', [PemasukanController::class, 'index']);
