@@ -28,7 +28,6 @@
                             @else
                                 <button class="btn btn-primary btn-lm" data-bs-toggle="modal" data-bs-target="#bookingModal" data-id="{{ $d->kamar_id }}" data-harga="{{ $d->harga }}">Pesan</button>
                                 <a href="/detail-kamar/{{ $d->kamar_id }}" class="btn btn-secondary btn-lm">Detail</a> <!-- Link ke halaman detail kamar -->
-                                <a href="/detail-kamar/{{ $d->kamar_id }}" class="btn btn-secondary btn-lm">Detail</a> <!-- Link ke halaman detail kamar -->
                             @endif
                         </div>
                     </div>
