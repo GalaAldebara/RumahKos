@@ -4,17 +4,17 @@
 }
 
 .btn-primary {
-    background-color: #6484fc;
-    border-color: #6484fc;
+    background-color: #5bb6e8;
+    border-color: #5bb6e8;
 }
 
 .btn-outline-secondary {
-    color: #6484fc;
-    border-color: #6484fc;
+    color: #5bb6e8;
+    border-color: #5bb6e8;
 }
 
 .btn-outline-secondary:hover {
-    background-color: #6484fc;
+    background-color: #5bb6e8;
     color: white;
 }
 

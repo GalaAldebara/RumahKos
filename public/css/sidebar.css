@@ -7,3 +7,19 @@
     margin-right: 3px;
     padding-left: 4px;
 }
+
+/* Add this to sidebar.css or styles.min.css */
+
+.left-sidebar .sidebar-nav .active,
+.left-sidebar .sidebar-nav a.active {
+    background-color: #5bb6e8 !important; /* New color for active item */
+    color: white !important; /* Ensures the text is readable on the new background */
+}
+
+/* Optional: Add hover color */
+.left-sidebar .sidebar-nav a:hover {
+    background-color: #4aa6d1 !important; /* Slightly darker for hover effect */
+    color: white !important;
+}
+
+

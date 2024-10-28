@@ -5,12 +5,12 @@
     <div class="col-md-12">
         <div class="card shadow-sm p-4">
             @if (!empty($data))
-                
+
             <!-- Judul Detail Kamar -->
-            <h3 class="fw-semibold text-primary mb-4 text-center">Detail Kamar</h3>
+            <h3 class="fw-semibold text-primary mb-4 text-center" style="color: #5bb6e8;">Detail Kamar</h3>
 
             <!-- Galeri Gambar Kamar -->
-            <h5 class="fw-semibold text-primary mt-4">Galeri Kamar</h5>
+            <h5 class="fw-semibold text-primary mt-4 " style="color: #5bb6e8;">Galeri Kamar</h5>
             <div class="row mt-3 mb-5">
                 <!-- Gambar Besar -->
                 <div class="col-md-8">
@@ -55,7 +55,7 @@
                 </div>
             </div>
 
-            <h4 class="fw-semibold text-primary mt-4">Aturan Kost</h4>
+            <h4 class="fw-semibold text-primary mt-4" style="color: #5bb6e8;">Aturan Kost</h4>
             <ul class="list-unstyled mt-3">
                 <li>1. Tidak diperkenankan membawa tamu tanpa izin.</li>
                 <li>2. Dilarang merokok di dalam kamar dan area kos.</li>
