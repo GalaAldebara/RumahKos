@@ -8,6 +8,7 @@
    src="{{ config('midtrans.snap_url') }}"
  data-client-key="{{ config('midtrans.client_key') }}"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
  <!-- Note: replace with src="https://app.midtrans.com/snap/snap.js" for Production environment -->
   <meta name="csrf-token" content="{{ csrf_token() }}"/>

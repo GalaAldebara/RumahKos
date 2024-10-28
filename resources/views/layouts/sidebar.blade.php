@@ -4,7 +4,14 @@
       <span class="hide-menu">Menu</span>
     </li>
     @can('is-admin')
-
+    <li class="sidebar-item">
+        <a class="sidebar-link" href="/dashboard" aria-expanded="false">
+            <span>
+                <i class="ti ti-dashboard"></i>
+            </span>
+            <span class="hide-menu">Dashboard</span>
+        </a>
+    </li>
     <li class="sidebar-item">
         <a class="sidebar-link" href="/kamar" aria-expanded="false">
           <span>
@@ -45,7 +52,7 @@
         <span>
           <i class="ti ti-wallet"></i>
         </span>
-        <span class="hide-menu">Pembayaran Kamar</span>
+        <span class="hide-menu">History Pemesanan</span>
       </a>
     </li>
     <li class="sidebar-item">
@@ -57,8 +64,8 @@
       </a>
     </li>
     @endif
-   
-      
+
+
 
     <li class="nav-small-cap">
       <i class="ti ti-dots nav-small-cap-icon fs-4"></i>

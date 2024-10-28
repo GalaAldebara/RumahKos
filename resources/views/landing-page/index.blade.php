@@ -19,13 +19,10 @@
     <body>
         <img class="bg-image" src="{{ asset('images/backgrounds/bg-mobile-fallback.jpg') }}" alt="Background Image" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;">
 
-            <!-- Color Overlay -->
-    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #6786fd; opacity: 0.2; z-index: -1;"></div>
-                <!-- Masthead-->
+             <div   div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #6786fd; opacity: 0.2; z-index: -1;"></div>
                 <div class="masthead">
                     <div class="masthead-content text-white">
                         <div class="container-fluid px-4 px-lg-0 text-center">
-                            <!-- Logo at the top of the masthead content with circular styling -->
                             <img src="{{ asset('images/logos/matoangin2.png') }}" alt="Kos Matoangin Logo" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 20px;">
 
                             <h1 class="fst-italic lh-1 mb-4">Kos Matoangin</h1>
@@ -34,23 +31,17 @@
                                 Nikmati suasana tenang, kamar yang bersih, dan akses mudah ke berbagai tempat penting.
                                 Tempat ideal untuk kamu yang butuh kenyamanan dan kemudahan, siap untuk menjadi rumah kedua!
                             </p>
-                            <!-- Membesarkan tombol login dengan ukuran lebih proporsional -->
                             <div class="col-auto d-flex gap-2 justify-content-center">
-                                <!-- Button Pesan Sekarang -->
-                                <button class="btn btn-primary" id="submitButton" type="button" onclick="window.location.href='{{ route('login') }}';" style="padding: 0.75rem 1.5rem; font-size: 1.25rem; background-color: #ffffff;">
+                                <button class="btn btn-primary" id="submitButton" type="button" onclick="window.location.href='{{ route('login') }}';" style="padding: 0.75rem 1.5rem; font-size: 1.25rem; background-color: #ffffff; color: #000000;">
                                     Pesan Sekarang!
                                 </button>
-                                <!-- Button WhatsApp -->
-                                <a class="btn btn-success" href="https://wa.me/089505490501" target="_blank" style="padding: 0.75rem 1.5rem; font-size: 1.25rem;">
+                                <a class="btn btn-success btn-whatsapp" href="https://wa.me/089505490501" target="_blank">
                                     <i class="fab fa-whatsapp"></i> WhatsApp
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-
 
                 <!-- Portfolio Section-->
                 <section class="page-section portfolio" id="portfolio">
@@ -106,7 +97,6 @@
                 <!-- About Section-->
                 <section class="page-section bg-light text-dark" id="about" style="min-height: 600px; display: flex; align-items: center;">
                     <div class="container">
-                        <!-- Heading dan Deskripsi Utama -->
                         <div class="row">
                             <div class="col-12 text-center mb-4">
                                 <h2 class="fw-bold">Matoangin - Website Kos Matoangin</h2>
@@ -130,7 +120,6 @@
                 <footer class="footer text-center">
                     <div class="container">
                         <div class="row justify-content-center">
-                            <!-- Footer Location-->
                             <div class="col-lg-4 mb-5 mb-lg-0">
                                 <h4 class="text-uppercase mb-4">Lokasi</h4>
                                 <p class="lead mb-0">
@@ -139,7 +128,6 @@
                                     Kecamatan Lowokwaru, Malang
                                 </p>
                             </div>
-                            <!-- Footer Social Icons-->
                             <div class="col-lg-4 mb-5 mb-lg-0">
                                 <h4 class="text-uppercase mb-4">Tentang Pemilik Website</h4>
                                 <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>

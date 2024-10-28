@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use AzisHapidin\IndoRegion\IndoRegion;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\LoginController;
@@ -8,15 +9,15 @@ use App\Http\Controllers\PenghuniController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PemasukanController;
 use App\Http\Controllers\GoogleAuthController;
-use App\Http\Controllers\DetailKamarController;
 use App\Http\Controllers\IndoregionController;
+use App\Http\Controllers\DetailKamarController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\UpdateProfilController;
+use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\PemesananKamarController;
 use App\Http\Controllers\PembayaranKamarController;
 use App\Http\Controllers\PengunduranDiriController;
 use App\Http\Controllers\PerpanjanganKontrakController;
-use AzisHapidin\IndoRegion\IndoRegion;
 
 Route::get('/nyoba', function () {
     return view('penghuni/edit');
@@ -32,6 +33,10 @@ Route::get('/contract', function () {
     return view('contract/index');
 });
 
+Route::get('/404', function () {
+    return view('pembayaran-kamar/404');
+});
+
 Route::get('/kamar', [KamarController::class, 'index']);
 Route::get('/kamar/create', [KamarController::class, 'create']);
 Route::post('/kamar/create', [KamarController::class, 'store']);
@@ -39,7 +44,8 @@ Route::get('/kamar/{id}/edit', [KamarController::class, 'edit']);
 Route::put('/kamar/{id}', [KamarController::class, 'update']);
 Route::delete('/kamar/{id}', [KamarController::class, 'destroy']);
 
-
+// Admin
+Route::get('/dashboard', [DashboardAdminController::class, 'index'])->name('dashboard');
 
 Route::get('/penghuni', [PenghuniController::class, 'index']);
 
@@ -64,11 +70,6 @@ Route::put('/update-profil/{id}', [UpdateProfilController::class, 'update']);
 
 
 Route::get('/income', [PemasukanController::class, 'index']);
-
-
-
-
-
 
 // Route::get('/tes', [PemesananKamarController::class, 'index']);
 Route::get('/pemesanan-kamar', [PemesananKamarController::class, 'index']);
