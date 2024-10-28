@@ -5,9 +5,9 @@
 <div class="row justify-content-center">
     <div class="col-md-10">
         <div class="card shadow-sm p-4">
-            <h3 class="fw-semibold text-primary mb-4">Edit Profile</h3>
+            <h3 class="fw-semibold mb-4" style="color: #5bb6e8;">Edit Profile</h3>
             <div class="text-center mb-4">
-                <img src="{{ asset('images/profile/yusri.png') }}" alt="User Profile" class="rounded-circle profile-picture">
+                <img src="{{ asset('images/profile/icon-profile.png') }}" alt="User Profile" class="rounded-circle profile-picture">
             </div>
             <form action="/update-profil/{{ $user->user_id }}" method="POST" enctype="multipart/form-data">
                 @csrf

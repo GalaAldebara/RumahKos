@@ -10,6 +10,7 @@ use App\Http\Controllers\PemasukanController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\DetailKamarController;
 use App\Http\Controllers\IndoregionController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\UpdateProfilController;
 use App\Http\Controllers\PemesananKamarController;
 use App\Http\Controllers\PembayaranKamarController;
@@ -45,13 +46,14 @@ Route::get('/penghuni', [PenghuniController::class, 'index']);
 Route::get('/penghuni/{id}/edit', [UserController::class, 'edit']);
 // Route::resource('penghuni', UserController::class);
 
-
+// Landing Page
+Route::get('/', [LandingPageController::class, 'index'])->name('landing-page');
 
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/', [LoginController::class, 'index'])->name('login');
+// Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);

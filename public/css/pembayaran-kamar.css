@@ -1,0 +1,40 @@
+/* Progress bar styling */
+.progress-step {
+    flex: 1;
+    text-align: center;
+}
+
+.step-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+}
+
+.bg-light {
+    background-color: #f0f0f0;
+    color: #aaa;
+}
+
+.progress-line {
+    height: 2px;
+    background-color: #e0e0e0;
+    flex: 1;
+    margin: 0 8px;
+}
+
+.bg-success {
+    background-color: #28a745 !important;
+}
+
+ul.list-unstyled li {
+    margin-bottom: 0.5rem; /* Space between list items */
+}
+
+ul.list-unstyled li strong {
+    width: 150px; /* Fixed width for labels */
+}

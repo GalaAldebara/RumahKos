@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="{{ asset('css/detail-kamar.css') }}">
   <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
   <link rel="stylesheet" href="{{ asset('css/update-profil.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/pembayaran-kamar.css') }}">
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -32,14 +33,15 @@
     <aside class="left-sidebar">
       <!-- Sidebar scroll-->
       <div>
-        <div class="brand-logo d-flex align-items-center justify-content-between">
-          <a href="./index.html" class="text-nowrap logo-img">
-            <img src="{{ asset('images/logos/matoangin.png') }}" width="180" alt="" />
-          </a>
-          <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
-            <i class="ti ti-x fs-8"></i>
-          </div>
+        <div class="brand-logo d-flex align-items-center justify-content-center">
+            <div class="logo-container" style="display: flex; justify-content: center; align-items: center; height: 150px;">
+                <a href="./index.html" class="text-nowrap logo-img">
+                    <img src="{{ asset('images/logos/matoangin2.png') }}" alt="Kos Matoangin Logo" style="width: 100px; height: 100px; border-radius: 50%;">
+                </a>
+            </div>
         </div>
+
+
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
          @include('layouts.sidebar')
