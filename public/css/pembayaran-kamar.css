@@ -31,10 +31,16 @@
     background-color: #28a745 !important;
 }
 
-ul.list-unstyled li {
-    margin-bottom: 0.5rem; /* Space between list items */
+ul.list-unstyled {
+    padding-left: 0; /* Remove default padding */
 }
 
-ul.list-unstyled li strong {
-    width: 150px; /* Fixed width for labels */
+ul.list-unstyled li {
+    margin-bottom: 0.5rem; /* Space between labels and values */
 }
+
+.text-custom {
+    color: #5bb6e8;
+}
+
+

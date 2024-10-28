@@ -4,17 +4,33 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-8">
-            <a href="halo, yus" class="text-decoration-none mb-3 d-block">
-                <i class="bi bi-arrow-left"></i> Kembali
-            </a>
-
-            <h5 class="fw-semibold">Informasi penyewa</h5>
+            <h5 class="fw-semibold" style="color: #5bb6e8;">Informasi Penyewa</h5>
             <ul class="list-unstyled">
-                <li><strong style="width: 150px; display: inline-block;">Nama penyewa    </strong>: Muhammad Iqbal Makmur Al Muniri</li>
-                <li><strong style="width: 150px; display: inline-block;">Nomor HP        </strong>: 085816178961</li>
-                <li><strong style="width: 150px; display: inline-block;">KTP             </strong>: 357305007123923</li>
-                <li><strong style="width: 150px; display: inline-block;">Tanggal Mulai   </strong>: 2024-10-26</li>
-                <li><strong style="width: 150px; display: inline-block;">Tanggal Selesai </strong>: 2025-01-26</li>
+                <li>
+                    <strong>Nama penyewa</strong>
+                    <br>
+                    <span>Muhammad Iqbal Makmur Al Muniri</span>
+                </li>
+                <li>
+                    <strong>Nomor HP</strong>
+                    <br>
+                    <span>085816178961</span>
+                </li>
+                <li>
+                    <strong>KTP</strong>
+                    <br>
+                    <span>357305007123923</span>
+                </li>
+                <li>
+                    <strong>Tanggal Mulai</strong>
+                    <br>
+                    <span>2024-10-26</span>
+                </li>
+                <li>
+                    <strong>Tanggal Selesai</strong>
+                    <br>
+                    <span>2025-01-26</span>
+                </li>
             </ul>
         </div>
 
@@ -28,7 +44,7 @@
                 </div>
             </div>
             <div class="card p-3">
-                <h6 class="fw-bold">Rincian pembayaran</h6>
+                <h6 class="fw-bold">Rincian Pembayaran</h6>
                 <p class="text-muted small">Akan diarahkan ke halaman detail kamar setelah pembayaran</p>
                 <div class="d-flex justify-content-between">
                     <p>Biaya sewa kos</p>
