@@ -9,11 +9,13 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PemasukanController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\DetailKamarController;
+use App\Http\Controllers\IndoregionController;
 use App\Http\Controllers\UpdateProfilController;
 use App\Http\Controllers\PemesananKamarController;
 use App\Http\Controllers\PembayaranKamarController;
 use App\Http\Controllers\PengunduranDiriController;
 use App\Http\Controllers\PerpanjanganKontrakController;
+use AzisHapidin\IndoRegion\IndoRegion;
 
 Route::get('/nyoba', function () {
     return view('penghuni/edit');
@@ -61,6 +63,12 @@ Route::put('/update-profil/{id}', [UpdateProfilController::class, 'update']);
 
 Route::get('/income', [PemasukanController::class, 'index']);
 
+
+
+
+
+
+// Route::get('/tes', [PemesananKamarController::class, 'index']);
 Route::get('/pemesanan-kamar', [PemesananKamarController::class, 'index']);
 Route::post('/pemesanan-kamar/create', [PemesananKamarController::class, 'store']);
 Route::get('/pembayaran-kamar', [PembayaranKamarController::class, 'index']);
@@ -68,6 +76,9 @@ Route::get('/pembayaran-kamar', [PembayaranKamarController::class, 'index']);
 Route::get('/perpanjangan-kontrak', [PerpanjanganKontrakController::class, 'index']);
 Route::post('/perpanjangan-kontrak', [PerpanjanganKontrakController::class, 'store'])->name('perpanjangan_kontrak');
 Route::post('/pemberhentian-kontrak', [PerpanjanganKontrakController::class, 'storePemberhentian'])->name('pemberhentian_kontrak');
+
+Route::get('/detail-kamar/{id}', [DetailKamarController::class, 'show']);
+
 
 Route::get('/detail-kamar', [DetailKamarController::class, 'index']);
 Route::post('/detail-kamar/create', [DetailKamarController::class, 'store']);
@@ -77,3 +88,9 @@ Route::get('/pengunduran-diri', [PengunduranDiriController::class, 'index']);
 
 Route::get('auth/google', [GoogleAuthController::class, 'redirect'])->name('google-auth');
 Route::get('auth/google/call-back', [GoogleAuthController::class, 'callbackGoogle']);
+
+Route::get('/form', [IndoregionController::class, 'form'])->name('form');
+
+Route::post('/getkabupaten', [IndoregionController::class, 'getkabupaten'])->name('getkabupaten');
+Route::post('/getkecamatan', [IndoregionController::class, 'getkecamatan'])->name('getkecamatan');
+Route::post('/getdesa', [IndoregionController::class, 'getdesa'])->name('getdesa');

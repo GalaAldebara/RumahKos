@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('total_tinggal');
             $table->dateTime('tanggal_pemesanan')->nullable();
             $table->string('dibooking_sampai');
+            $table->enum('status', ['Unpaid', 'Paid']);
 
 
             $table->timestamps();

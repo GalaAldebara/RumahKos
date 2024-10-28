@@ -18,8 +18,6 @@ return new class extends Migration
             $table->string('nama_belakang', 50)->nullable();
             $table->string('no_telp', 50)->nullable();
             $table->string('ktp', 50)->nullable();
-            $table->string('kota', 50)->nullable();
-            $table->string('provinsi', 50)->nullable();
             $table->string('alamat', 50)->nullable();
             $table->string('nik', 50)->nullable();
             $table->string('email')->unique()->nullable();

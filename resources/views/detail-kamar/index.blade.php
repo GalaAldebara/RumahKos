@@ -28,7 +28,7 @@
             <div class="d-flex justify-content-between align-items-start mb-4">
                 <div>
                     <h5 class="fw-semibold">Nama Penghuni:</h5>
-                    <p>{{ $data->getuser->nama ?? 'Tidak ada data' }}</p>
+                    <p>{{ $data->getuser->nama_depan . ' ' .$data->getuser->nama_belakang ?? 'Tidak ada data' }}</p>
                     <h5 class="fw-semibold">Nama Kamar:</h5>
                     <p>{{ $data->getkamar->nama ?? 'Tidak ada data' }}</p>
                     <h5 class="fw-semibold">Total Tinggal:</h5>

@@ -24,7 +24,7 @@ class DetailKamarController extends Controller
 
     public function show($id)
     {
-        $kamar = KamarModel::findOrFail($id);
+        $kamar = KamarModel::findOrFail($id)->first();
 
         return view('detail-kamar.show', compact('kamar'));
     }
