@@ -3,7 +3,15 @@
 
 <head>
   <meta charset="utf-8">
+   <!-- @TODO: replace SET_YOUR_CLIENT_KEY_HERE with your client key -->
+   <script type="text/javascript"
+   src="{{ config('midtrans.snap_url') }}"
+ data-client-key="{{ config('midtrans.client_key') }}"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+ <!-- Note: replace with src="https://app.midtrans.com/snap/snap.js" for Production environment -->
+  <meta name="csrf-token" content="{{ csrf_token() }}"/> 
+
   <title>RumahKos</title>
   <link rel="shortcut icon" type="image/png" href="{{ asset('images/logos/favicon.png') }}" />
   <link rel="stylesheet" href="{{ asset('css/styles.min.css') }}" />
@@ -12,6 +20,9 @@
   <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
   <link rel="stylesheet" href="{{ asset('css/update-profil.css') }}">
   <link rel="stylesheet" href="{{ asset('css/pembayaran-kamar.css') }}">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
@@ -62,7 +73,11 @@
 <script src="{{ asset('libs/apexcharts/dist/apexcharts.min.js') }}"></script>
 <script src="{{ asset('libs/simplebar/dist/simplebar.js') }}"></script>
 <script src="{{ asset('js/dashboard.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+@stack('scripts')
 </body>
 
 </html>

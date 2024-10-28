@@ -28,6 +28,7 @@
                             @else
                                 <button class="btn btn-primary btn-lm" data-bs-toggle="modal" data-bs-target="#bookingModal" data-id="{{ $d->kamar_id }}" data-harga="{{ $d->harga }}">Pesan</button>
                                 <a href="/detail-kamar/{{ $d->kamar_id }}" class="btn btn-secondary btn-lm">Detail</a> <!-- Link ke halaman detail kamar -->
+                                <a href="/detail-kamar/{{ $d->kamar_id }}" class="btn btn-secondary btn-lm">Detail</a> <!-- Link ke halaman detail kamar -->
                             @endif
                         </div>
                     </div>
@@ -55,6 +56,7 @@
                         <form id="bookingForm" action="/pemesanan-kamar/create" method="POST">
                             @csrf
                             <input type="hidden" name="user" value="{{ Auth::user()->user_id }}">
+                            <input type="hidden" name="name" value="{{ Auth::user()->nama_depan }}">
                             <input type="hidden" name="kamar" value="{{ $d->kamar_id }}">
                             <input type="hidden" name="harga" value="{{ $d->harga }}">
                             {{-- <div class="mb-3">
@@ -74,8 +76,20 @@
                             <div class="mb-3">
                                 <label for="tanggal" class="form-label mt-3">Pilih Tanggal</label>
                                 <input type="date" id="tanggal" class="form-control" name="tanggal" min="<?php echo date('Y-m-d'); ?>"   max="<?php echo date('Y-m-d', strtotime('+1 week')); ?>">
+                            </div> --}}
+                            <div class="mb-3">
+                                <label for="tanggal" class="form-label mt-3">Pilih Tanggal</label>
+                                <input type="date" id="tanggal" class="form-control" name="tanggal" min="<?php echo date('Y-m-d'); ?>"   max="<?php echo date('Y-m-d', strtotime('+1 week')); ?>">
                             </div>
                             <div class="mb-3">
+                                <label for="duration" class="form-label">Durasi Sewa</label>
+                                <select id="durasi" name="total_tinggal" class="form-select">
+                                    <option value="1">Per 1 Bulan</option>
+                                    <option value="3">Per 3 Bulan</option>
+                                    <option value="6">Per 6 Bulan</option>
+                                    <option value="9">Per 9 Bulan</option>
+                                    <option value="12">Per Tahun</option>
+                                </select>
                                 <label for="duration" class="form-label">Durasi Sewa</label>
                                 <select id="durasi" name="total_tinggal" class="form-select">
                                     <option value="1">Per 1 Bulan</option>

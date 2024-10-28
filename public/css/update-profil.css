@@ -42,6 +42,14 @@
     flex-direction: column;
 }
 
+    .text-success {
+        color: green; /* Warna hijau */
+    }
+    .text-danger {
+        color: red; /* Warna merah */
+    }
+
+
 .upload-box:hover {
     border-color: #aaa;
 }

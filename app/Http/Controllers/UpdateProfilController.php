@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Province;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,8 +15,9 @@ class UpdateProfilController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $provinces = Province::all();
 
-        return view('update-profil.index', compact('user'));
+        return view('update-profil.index', compact('user', 'provinces'));
     }
 
     public function update(Request $request, string $id)
@@ -23,27 +25,35 @@ class UpdateProfilController extends Controller
         $request->validate([
             'nama_depan' => 'required',
             'nama_belakang' => 'required',
-            'nik' => 'required',
-            'email' => 'required',
+            'nik' => 'required|digits:16',
+            'email' => 'required|email',
             'alamat' => 'required',
             'no_telp' => 'required',
-            'kota' => 'required',
             'provinsi' => 'required',
+            'kota' => 'required',
+            'kecamatan' => 'required',
+            'kelurahan' => 'required',
         ]);
 
-        $pengumuman = User::find($id);
-        $namaFile = $pengumuman->gambar;
+        // $user = User::find($id);
+        // $namaFile = 'profile' . $user->user_id;
 
-        if ($request->hasFile('gambar')) {
-            // Hapus gambar lama jika ada
-            if ($namaFile && File::exists(public_path('images/profile/' . $namaFile))) {
-                File::delete(public_path('gambar/pengumuman/' . $namaFile));
-            }
+        if ($request->hasFile('ktp')) {
+            $file = $request->file('ktp');
+            $extfile = $file->getClientOriginalExtension();
 
-            $extfile = $request->file('gambar')->getClientOriginalExtension();
-            $judulFormatted = strtolower(str_replace(' ', '', $request->judul));
+            // Menangani nama file yang lebih aman
+            $judulFormatted = strtolower(str_replace(' ', '', Auth::user()->username . Auth::user()->user_id));
             $namaFile = $judulFormatted . '.' . $extfile;
-            $request->file('gambar')->move(public_path('gambar/profile/'), $namaFile);
+
+            $file->move(public_path('images/ktp'), $namaFile);
+            $validatedData['ktp'] = $namaFile;
+        }
+
+        if ($request->filled('password')) {
+            User::find($id)->update([
+                'password' => Hash::make($request->password),
+            ]);
         }
 
         User::find($id)->update([
@@ -55,7 +65,9 @@ class UpdateProfilController extends Controller
             'no_telp' => $request->no_telp,
             'kota' => $request->kota,
             'provinsi' => $request->provinsi,
-            'gambar' => $namaFile,
+            'kecamatan' => $request->kecamatan,
+            'kelurahan' => $request->kelurahan,
+            'ktp' => $namaFile,
         ]);
 
         return redirect('/update-profil')->with('success', 'Data Kamar berhasil diubah');
