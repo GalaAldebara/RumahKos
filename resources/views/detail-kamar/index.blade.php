@@ -1,10 +1,10 @@
 @extends('layouts.main')
 
 @section('container')
+@if (!empty($data))
 <div class="row justify-content-center">
     <div class="col-md-12">
         <div class="card shadow-sm p-4">
-            @if (!empty($data))
 
             <!-- Judul Detail Kamar -->
             <h3 class="fw-semibold text-primary mb-4 text-center" style="color: #5bb6e8;">Detail Kamar</h3>
@@ -81,12 +81,47 @@
                 <li>8. Setiap kerusakan fasilitas kos harus segera dilaporkan.</li>
             </ul>
         </div>
-        @else
-        <h1>TIDAK ADA DATA</h1>
-        @endif
-
+        
     </div>
 </div>
+@else
+<style>
+    .error-page {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('{{ asset('images/backgrounds/404background.png') }}');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: center;
+    }
+    .error-container {
+        border: 3px solid white;
+        border-radius: 10px;
+        padding: 15px;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: black;
+    }
+    .error-title {
+        font-size: 36px;
+        font-weight: bold;
+    }
+    .error-message {
+        font-size: 18px;
+        margin-top: 5px;
+    }
+</style>
+
+<div class="error-page">
+    <div class="error-container">
+        <h1 class="error-title">Ups, Halaman Tidak Ditemukan!</h1>
+        <p class="error-message">Kamar Yang Anda Cari Tidak Ditemukan</p>
+        <a href="{{ url('pemesanan-kamar') }}" class="btn btn-primary">Pesan Kamar!</a>
+    </div>
+</div>
+@endif
 
 <div class="modal fade" id="perpanjanganModal" tabindex="-1" aria-labelledby="perpanjanganModalLabel" aria-hidden="true">
     <div class="modal-dialog">
