@@ -70,10 +70,6 @@ Route::get('/income', [PemasukanController::class, 'index']);
 Route::get('/income/{id}', [PemasukanController::class, 'show']);
 
 
-
-
-
-
 // Route::get('/tes', [PemesananKamarController::class, 'index']);
 Route::get('/pemesanan-kamar', [PemesananKamarController::class, 'index']);
 Route::post('/pemesanan-kamar/create', [PemesananKamarController::class, 'store']);
