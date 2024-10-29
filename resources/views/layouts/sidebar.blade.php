@@ -42,28 +42,27 @@
     <li class="sidebar-item">
       <a class="sidebar-link" href="/pemesanan-kamar" aria-expanded="false">
         <span>
-          <i class="ti ti-home"></i>
+            <img src="{{ asset('images/products/house.png') }}" alt="Kamar Anda" style="width: 20px; height: 20px;">
         </span>
         <span class="hide-menu">Pemesanan Kamar</span>
       </a>
     </li>
     <li class="sidebar-item">
       <a class="sidebar-link {{ Request::is('histori*') ? 'active' : '' }}" href="/histori" aria-expanded="false">
-        
         <span>
-          <i class="ti ti-wallet"></i>
+            <img src="{{ asset('images/products/History.png') }}" alt="Kamar Anda" style="width: 20px; height: 20px;">
         </span>
-        <span class="hide-menu">histori</span>
+        <span class="hide-menu">Riwayat Pemesanan</span>
       </a>
     </li>
     <li class="sidebar-item">
-      <a class="sidebar-link" href="/detail-kamar" aria-expanded="false">
-        <span>
-          <i class="ti ti-file"></i>
-        </span>
-        <span class="hide-menu">Kamar Anda</span>
-      </a>
-    </li>
+        <a class="sidebar-link" href="/detail-kamar" aria-expanded="false">
+          <span>
+            <img src="{{ asset('images/products/bed.png') }}" alt="Kamar Anda" style="width: 20px; height: 20px;">
+          </span>
+          <span class="hide-menu">Kamar Anda</span>
+        </a>
+      </li>
     @endif
 
 

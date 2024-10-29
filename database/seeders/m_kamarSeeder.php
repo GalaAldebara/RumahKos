@@ -15,7 +15,7 @@ class m_kamarSeeder extends Seeder
     {
         DB::table('kamar')->insert([
             [
-                'nama' => 'kamar 1',
+                'nama' => 'Kamar Bougenvill 1',
                 'deskripsi' => 'kamar bagus',
                 'luas' => '3 x 5 M',
                 'fasilitas' => 'AC',
@@ -24,7 +24,7 @@ class m_kamarSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'nama' => 'kamar 2',
+                'nama' => 'Kamar Rose 2',
                 'deskripsi' => 'kamar bagus',
                 'luas' => '3 x 5 M',
                 'fasilitas' => 'AC',
@@ -33,7 +33,7 @@ class m_kamarSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'nama' => 'kamar 3',
+                'nama' => 'Kamar Widara 3',
                 'deskripsi' => 'kamar bagus',
                 'luas' => '3 x 5 M',
                 'fasilitas' => 'AC',
