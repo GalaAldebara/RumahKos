@@ -30,9 +30,9 @@
                   <th class="border-bottom-0">
                     <h6 class="fw-semibold mb-0">Status</h6>
                   </th>
-                  <th class="border-bottom-0">
+                  {{-- <th class="border-bottom-0">
                     <h6 class="fw-semibold mb-0">Action</h6>
-                  </th>
+                  </th> --}}
                 </tr>
               </thead>
 
@@ -66,14 +66,13 @@
                     </div>
                   </td>
 
-                  <td class="border-bottom-0">
-                    {{-- <a href="penghuni/{{ $d->user_id }}/edit" class="btn btn-warning">Edit</a> --}}
+                  {{-- <td class="border-bottom-0">
                     <form action="" method="POST" style="display: inline;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data?')">Keluarkan</button>
                     </form>
-                  </td>
+                  </td> --}}
                   {{-- <td class="border-bottom-0">
                     <a href="penghuni/{{ $d->user_id }}/edit" class="btn btn-warning">Edit</a>
                     <form action="" method="POST" style="display: inline;">

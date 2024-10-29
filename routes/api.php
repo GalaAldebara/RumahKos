@@ -8,4 +8,4 @@ Route::middleware('api')->get('/example', function () {
     return response()->json(['message' => 'API route is working']);
 });
 
-// Route::post('/midtrans-callback', [PemesananKamarController::class, 'callback']);
+Route::post('/midtrans-callback', [PemesananKamarController::class, 'callback']);

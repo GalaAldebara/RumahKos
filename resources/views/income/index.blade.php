@@ -31,6 +31,12 @@
                   <th class="border-bottom-0">
                     <h6 class="fw-semibold mb-0">Total Harga</h6>
                   </th>
+                  <th class="border-bottom-0">
+                    <h6 class="fw-semibold mb-0">Jenis</h6>
+                  </th>
+                  <th class="border-bottom-0">
+                    <h6 class="fw-semibold mb-0">Action</h6>
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -56,9 +62,21 @@
                   </td>
                   <td class="border-bottom-0">
                     <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-primary rounded-3 fw-semibold">
+                   {{ $d->jenis }}
+                  </span>
+                    </div>
+                  </td>
+                  <td class="border-bottom-0">
+                    <div class="d-flex align-items-center gap-2">
                       <span class="badge bg-primary rounded-3 fw-semibold"> Rp {{ number_format($d->harga, 0, ',', '.') }}</span>
                     </div>
                   </td>
+                  <td class="border-bottom-0">
+                    <a href="/income/{{ $d->order_id }}" class="btn btn-warning">Detail</a>
+                    
+                  </td>
+                  
                 </tr> 
                 @endforeach
                   

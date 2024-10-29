@@ -13,7 +13,7 @@
         </a>
     </li>
     <li class="sidebar-item">
-        <a class="sidebar-link" href="/kamar" aria-expanded="false">
+        <a class="sidebar-link {{ Request::is('kamar*') ? 'active' : '' }}" href="/kamar" aria-expanded="false">
           <span>
             <i class="ti ti-home"></i>
           </span>
@@ -29,7 +29,7 @@
       </a>
     </li>
   <li class="sidebar-item">
-      <a class="sidebar-link" href="/income" aria-expanded="false">
+      <a class="sidebar-link {{ Request::is('income*') ? 'active' : '' }}" href="/income" aria-expanded="false">
         <span>
           <i class="ti ti-home"></i>
         </span>
@@ -48,11 +48,12 @@
       </a>
     </li>
     <li class="sidebar-item">
-      <a class="sidebar-link" href="/pembayaran-kamar" aria-expanded="false">
+      <a class="sidebar-link {{ Request::is('histori*') ? 'active' : '' }}" href="/histori" aria-expanded="false">
+        
         <span>
           <i class="ti ti-wallet"></i>
         </span>
-        <span class="hide-menu">History Pemesanan</span>
+        <span class="hide-menu">histori</span>
       </a>
     </li>
     <li class="sidebar-item">
@@ -79,6 +80,8 @@
             <span class="hide-menu">Login</span>
         </a>
     </li> --}}
+    @if(Gate::allows('is-user'))
+
     <li class="sidebar-item">
       <a class="sidebar-link" href="/update-profil" aria-expanded="false">
         <span class="icon-center">
@@ -89,6 +92,7 @@
         <span class="hide-menu">Profil</span>
       </a>
   </li>
+  @endif
     <li class="sidebar-item">
       {{-- <a class="sidebar-link" href="/logout" aria-expanded="false">
         <span>
