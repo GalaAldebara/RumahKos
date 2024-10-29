@@ -11,15 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pemesanan', function (Blueprint $table) {
-            $table->bigIncrements('pemesanan_id');
+        Schema::create('order', function (Blueprint $table) {
+            $table->bigIncrements('order_id');
             $table->unsignedBigInteger('user')->index()->nullable();
             $table->unsignedBigInteger('kamar')->index();
             $table->integer('harga');
             $table->integer('total_tinggal');
             $table->dateTime('tanggal_pemesanan')->nullable();
             $table->string('dibooking_sampai');
-            $table->enum('status', ['aktif', 'tidak aktif']);
+            $table->enum('status', ['Unpaid', 'Paid']);
+            $table->enum('jenis', ['Sewa', 'Perpanjang']);
 
 
             $table->timestamps();
@@ -33,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pemesanan');
+        Schema::dropIfExists('order');
     }
 };

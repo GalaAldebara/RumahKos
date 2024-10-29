@@ -76,7 +76,7 @@
                 <div class="mb-3">
                     <label for="ktp" class="form-label">Upload KTP <span class="text-danger">*</span></label>
                     <div class="upload-box">
-                        <input type="file" class="form-control-file" id="ktp" name="ktp" onchange="showFileName(this)"  value="{{ old('ktp', $user->ktp ?? '') }}">
+                        <input type="file" class="form-control-file" id="ktp" name="ktp" onchange="showFileName(this)">
                         <div class="upload-box-content text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-cloud-arrow-up upload-svg-icon" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708z"/>
@@ -85,10 +85,16 @@
                             <p class="upload-text">Pilih foto atau tarik kesini</p>
                             <p class="upload-hint">JPEG atau PNG maksimal ukuran 10 MB.</p>
                             <button type="button" class="btn btn-outline-secondary" onclick="document.getElementById('ktp').click()">Pilih Foto</button>
-                            <p id="file-name" class="text-muted mt-2"></p>
+                            <p id="file-name" class="text-muted mt-2">
+                                @if($user->ktp)
+                                    {{ basename($user->ktp) }} <!-- Tampilkan nama file KTP yang sudah di-upload sebelumnya -->
+                                @else
+                                    Tidak ada file yang di-upload
+                                @endif
+                            </p>
                         </div>
                     </div>
-            </div>
+                </div>
 
 
                 <div class="row mb-3">
@@ -127,10 +133,10 @@
                 </div>
 
                 <!-- Password -->
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Ganti password jika anda ingin mengubah">
-                </div>
+                </div> --}}
 
                 <!-- Action Buttons -->
                 <div class="d-flex justify-content-between mt-4">
@@ -152,6 +158,16 @@
 
 
 @endsection
+
+<script>
+    function showFileName(input) {
+        // Ambil nama file yang dipilih
+        if (input.files && input.files[0]) {
+            const fileName = input.files[0].name;
+            document.getElementById('file-name').textContent = fileName; // Tampilkan nama file yang dipilih
+        }
+    }
+    </script>
 
 <script>
     function checkNIKLength() {

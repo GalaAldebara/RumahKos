@@ -10,14 +10,13 @@ use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
 class DetailKamarController extends Controller
-{    // public function index()
-    // {
-    //     return view('detail-kamar.index');
-    // }
-
+{
     public function index()
     {
-        $data = PemesananModel::where('user', Auth::user()->user_id)->first();
+        $data = PemesananModel::where('user', Auth::user()->user_id)
+            ->where('status', 'aktif')
+            ->first();
+
         return view('detail-kamar.index', ['data' => $data]);
     }
 
@@ -28,8 +27,6 @@ class DetailKamarController extends Controller
 
         return view('detail-kamar.show', compact('kamar'));
     }
-
-
 
     public function store(Request $request)
     {

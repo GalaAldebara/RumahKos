@@ -49,8 +49,22 @@
                         @endif
 
                         <!-- Tombol Perpanjangan dan Pemberhentian Kontrak -->
-                        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#perpanjanganModal">Perpanjangan Kontrak</button>
-                        <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#pemberhentianModal">Pemberhentian Kontrak</button>
+                        @if($data->status === 'aktif')
+                        <button class="btn btn-outline-primary btn-sm" 
+                                data-bs-toggle="modal" 
+                                data-bs-target="#perpanjanganModal"  
+                                data-harga="{{ $data->getkamar->harga }}" 
+                                data-id="{{ $data->kamar }}" 
+                                data-dibooking_sampai="{{ $data->dibooking_sampai }}">
+                            Perpanjangan Kontrak
+                        </button>
+                        <button class="btn btn-outline-danger btn-sm" 
+                                data-bs-toggle="modal" 
+                                data-bs-target="#pemberhentianModal">
+                            Pemberhentian Kontrak
+                        </button>
+                    @endif
+                    
                     </div>
                 </div>
             </div>
@@ -82,16 +96,29 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="/detail-kamar/create" method="POST">
+                <form action="/pemesanan-kamar/create" method="POST">
                     @csrf
                     @if ($data)
-                    <input type="hidden" name="pemesanan" value="{{ $data->pemesanan_id }}">
-                    <input type="hidden" name="dibooking_sampai" value="{{ $data->dibooking_sampai }}">
-                    <input type="hidden" name="kamar" value="{{ $data->kamar }}">
+                        
+                    <input type="hidden" name="tanggal" value="{{ $data->dibooking_sampai }}">
+
+                    <input type="hidden" name="user" value="{{ Auth::user()->user_id }}">
+                            <input type="hidden" name="name" value="{{ Auth::user()->nama_depan }}">
+                            <input type="hidden" name="kamar" value="{{ $data->kamar }}">
+                            <input type="hidden" name="jenis" value="Sewa">
+                            <input type="hidden" name="harga" value="{{ $data->getkamar->harga }}">
                     @endif
+
                     <div class="mb-3">
-                        <label for="durasi" class="form-label">Durasi Perpanjangan (bulan)</label>
-                        <input type="number" class="form-control" id="total_tinggal" name="total_tinggal" placeholder="Masukkan durasi dalam bulan" required>
+                        <label for="duration" class="form-label">Durasi Sewa</label>
+                        <select id="durasi" name="total_tinggal" class="form-select">
+                            <option value="1">Per 1 Bulan</option>
+                            <option value="3">Per 3 Bulan</option>
+                            <option value="6">Per 6 Bulan</option>
+                            <option value="9">Per 9 Bulan</option>
+                            <option value="12">Per Tahun</option>
+                        </select>
+                        
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
@@ -111,11 +138,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('pemberhentian_kontrak') }}" method="POST">
+                <form action="/pemberhentian-kontrak/{{ Auth::user()->user_id }}" method="POST">
+                    @method('put')
                     @csrf
                     <div class="mb-3">
-                        <label for="alasan" class="form-label">Alasan Pemberhentian</label>
-                        <textarea class="form-control" id="alasan" name="alasan" placeholder="Masukkan alasan pemberhentian" required></textarea>
+                        <label for="alasan" class="form-label">Apakah anda yakin untuk berhenti</label>
+                        
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>

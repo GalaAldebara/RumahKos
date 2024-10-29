@@ -9,6 +9,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PemasukanController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\DetailKamarController;
+use App\Http\Controllers\HistoriController;
 use App\Http\Controllers\IndoregionController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\UpdateProfilController;
@@ -18,9 +19,6 @@ use App\Http\Controllers\PengunduranDiriController;
 use App\Http\Controllers\PerpanjanganKontrakController;
 use AzisHapidin\IndoRegion\IndoRegion;
 
-Route::get('/nyoba', function () {
-    return view('penghuni/edit');
-});
 
 Route::get('/register', function () {
     return view('login/index2');
@@ -39,12 +37,12 @@ Route::get('/kamar/{id}/edit', [KamarController::class, 'edit']);
 Route::put('/kamar/{id}', [KamarController::class, 'update']);
 Route::delete('/kamar/{id}', [KamarController::class, 'destroy']);
 
-
+Route::get('/histori', [HistoriController::class, 'index']);
+Route::get('/histori/{id}', [HistoriController::class, 'show']);
 
 Route::get('/penghuni', [PenghuniController::class, 'index']);
 
 Route::get('/penghuni/{id}/edit', [UserController::class, 'edit']);
-// Route::resource('penghuni', UserController::class);
 
 // Landing Page
 Route::get('/', [LandingPageController::class, 'index'])->name('landing-page');
@@ -64,6 +62,7 @@ Route::put('/update-profil/{id}', [UpdateProfilController::class, 'update']);
 
 
 Route::get('/income', [PemasukanController::class, 'index']);
+Route::get('/income/{id}', [PemasukanController::class, 'show']);
 
 
 
@@ -74,6 +73,7 @@ Route::get('/income', [PemasukanController::class, 'index']);
 Route::get('/pemesanan-kamar', [PemesananKamarController::class, 'index']);
 Route::post('/pemesanan-kamar/create', [PemesananKamarController::class, 'store']);
 Route::get('/pembayaran-kamar', [PembayaranKamarController::class, 'index']);
+Route::put('/pemberhentian-kontrak/{id}', [PemesananKamarController::class, 'update']);
 
 Route::get('/perpanjangan-kontrak', [PerpanjanganKontrakController::class, 'index']);
 Route::post('/perpanjangan-kontrak', [PerpanjanganKontrakController::class, 'store'])->name('perpanjangan_kontrak');

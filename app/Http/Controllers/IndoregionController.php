@@ -15,6 +15,7 @@ class IndoregionController extends Controller
     public function form()
     {
         $provinces = Province::all();
+
         return view('form', compact('provinces'));
     }
 

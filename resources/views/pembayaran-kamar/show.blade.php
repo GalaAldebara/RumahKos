@@ -1,27 +1,25 @@
 @extends('layouts.main')
 
 @section('container')
-
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-8">
-
             <h5 class="fw-semibold" style="color: #5bb6e8;">Informasi Penyewa</h5>
             <ul class="list-unstyled">
                 <li>
                     <strong>Nama penyewa</strong>
                     <br>
-                    <span> {{ $order->getuser->nama_depan }}</span>
+                    <span> {{ $data->getuser->nama_depan }}</span>
                 </li>
                 <li>
                     <strong>Nomor HP</strong>
                     <br>
-                    <span> {{ $order->getuser->no_telp }}</span>
+                    <span> {{ $data->getuser->no_telp }}</span>
                 </li>
                 <li>
                     <strong>KTP</strong>
                     <br>
-                    <span>{{ $order->getuser->nik }}</span>
+                    <span>{{ $data->getuser->nik }}</span>
                 </li>
                 <li>
                     <strong>Tanggal Mulai</strong>
@@ -31,12 +29,12 @@
                 <li>
                     <strong>Tanggal Selesai</strong>
                     <br>
-                    <span>{{ date('d F Y', strtotime($data->dibooking_sampai ?? now())) }}</span>
+                    <span>{{ date('d F Y', strtotime($data->dibooking_sampai)) }}</span>
                 </li>
                 <li>
                     <strong>Status</strong>
                     <br>
-                    <span>{{ $order->status}}</span>
+                    <span>{{ $data->status}}</span>
                 </li>
             </ul>
         </div>
@@ -46,7 +44,7 @@
                 <img src="{{ asset('images/products/kamar1.png') }}" class="card-img-top" alt="Kost Image">
                 <div class="card-body">
                     <h6 class="fw-bold">Kost Putra</h6>
-                    <p class="mb-1">{{ $order->getkamar->nama}}</p>
+                    <p class="mb-1">{{ $data->getkamar->nama}}</p>
                     <p class="text-muted small">WiFi • Kasur • Air • K. Mandi Dalam</p>
                 </div>
             </div>
@@ -55,58 +53,22 @@
                 <p class="text-muted small">Akan diarahkan ke halaman detail kamar setelah pembayaran</p>
                 <div class="d-flex justify-content-between">
                     <p>Biaya sewa kos</p>
-                    <p>Rp{{ number_format($kamar->getkamar->harga, 0, ',', '.') }}</p>
+                    <p>Rp {{ number_format($data->getkamar->harga, 0, ',', '.') }}</p>
                 </div>
 
                 <div class="d-flex justify-content-between">
                     <p>Durasi Tinggal <i class="bi bi-question-circle" data-bs-toggle="tooltip" title="Info about deposit"></i></p>
-                    <p>{{ $order->total_tinggal}} Bulan</p>
+                    <p>{{ $data->total_tinggal}} Bulan</p>
                 </div>
-                <hr>
                 <div class="d-flex justify-content-between fw-bold">
                     <p>Total pembayaran</p>
-                    <p>Rp{{ number_format($order->harga, 0, ',', '.') }} </p>
-                    <button class="btn btn-primary" id="pay-button">Bayar Sekarang</button>
+                    <p>Rp {{ number_format($data->harga, 0, ',', '.') }}</p>
                 </div>
+                <hr>
+                
             </div>
 
         </div>
     </div>
-    <div class="row">
-        <div id="snap-container"></div>
-
-    </div>
 </div>
 @endsection
-
-@push('scripts')
-    
-<script type="text/javascript">
-    // For example trigger on button clicked, or any time you need
-    var payButton = document.getElementById('pay-button');
-    payButton.addEventListener('click', function () {
-      // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token.
-      // Also, use the embedId that you defined in the div above, here.
-      window.snap.embed('{{$snapToken}}', {
-        embedId: 'snap-container',
-        onSuccess: function (result) {
-          /* You may add your own implementation here */
-         // alert("payment success!"); console.log(result);
-        window.location.href = '/histori'
-        },
-        onPending: function (result) {
-          /* You may add your own implementation here */
-          alert("wating your payment!"); console.log(result);
-        },
-        onError: function (result) {
-          /* You may add your own implementation here */
-          alert("payment failed!"); console.log(result);
-        },
-        onClose: function () {
-          /* You may add your own implementation here */
-          alert('you closed the popup without finishing the payment');
-        }
-      });
-    });
-  </script>
-@endpush

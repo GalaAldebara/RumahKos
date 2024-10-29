@@ -17,6 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('kamar')->index();
             $table->dateTime('tanggal_pemesanan')->nullable();
             $table->string('dibooking_sampai');
+            $table->enum('status', ['aktif', 'tidak aktif']);
+
             $table->timestamps();
 
             $table->foreign('user')->references('user_id')->on('users');

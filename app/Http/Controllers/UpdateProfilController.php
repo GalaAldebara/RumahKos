@@ -38,6 +38,10 @@ class UpdateProfilController extends Controller
         // $user = User::find($id);
         // $namaFile = 'profile' . $user->user_id;
 
+        $user = User::find($id);
+        $namaFile = $user->ktp;
+
+
         if ($request->hasFile('ktp')) {
             $file = $request->file('ktp');
             $extfile = $file->getClientOriginalExtension();

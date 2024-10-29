@@ -37,7 +37,7 @@ class m_userSeeder extends Seeder
                 'username' => 'yusriyahf',
                 'nama_depan' => 'Yusriyah Firjatullah',
                 'nama_belakang' => 'maulana',
-                'level_id' => 3,
+                'level_id' => 2,
                 'password' => Hash::make('12345'),
                 'created_at' => now(),
                 'updated_at' => now(),

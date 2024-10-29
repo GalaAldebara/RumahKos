@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\KamarModel;
+use App\Models\OrderModel;
 use App\Models\PemesananModel;
 use App\Models\PenghuniModel;
 use Illuminate\Http\Request;
@@ -12,8 +13,10 @@ class PemesananKamarController extends Controller
 {
     public function index()
     {
+        $dataPesan = PemesananModel::where('user', Auth::user()->user_id)->get();
+        $hasActiveStatus = $dataPesan->contains('status', 'aktif');
         $data = KamarModel::all();
-        return view('pemesanan-kamar.index', ['data' => $data]);
+        return view('pemesanan-kamar.index', ['data' => $data, 'hasActiveStatus' => $hasActiveStatus]);
     }
 
     public function create()
@@ -23,12 +26,14 @@ class PemesananKamarController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request);
 
         $validatedData = $request->validate([
             'user' => 'required',
             'kamar' => 'required',
             'harga' => 'required',
             'tanggal' => 'required',
+            'jenis' => 'required',
             'total_tinggal' => 'required|integer|min:1',
         ]);
 
@@ -41,27 +46,15 @@ class PemesananKamarController extends Controller
         $dibookingSampai = \Carbon\Carbon::parse($request->tanggal)->addMonths($totalTinggal);
         $tanggalPemesanan = \Carbon\Carbon::parse($request->tanggal);
 
-        $order = PemesananModel::create([
+        $order = OrderModel::create([
             'user' => Auth::id(),
             'kamar' => $validatedData['kamar'],
             'harga' => $validatedData['harga'],
             'total_tinggal' => $totalTinggal,
             'dibooking_sampai' => $dibookingSampai,
-            'tanggal_pemesanan' => $tanggalPemesanan, // Menyimpan tanggal pemesanan
+            'tanggal_pemesanan' => $tanggalPemesanan,
             'status' => 'Unpaid'
         ]);
-
-        PenghuniModel::create([
-            'user' => Auth::user()->user_id,
-            'kamar' => $validatedData['kamar'],
-            'dibooking_sampai' => $dibookingSampai,
-            'tanggal_pemesanan' => $tanggalPemesanan, // Menyimpan tanggal pemesanan
-        ]);
-
-        // Update tanggal dibooking_sampai di tabel kamar
-        KamarModel::where('kamar_id', $kamarId)->update(['dibooking_sampai' => $dibookingSampai]);
-
-
 
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = config('midtrans.server_key');
@@ -75,23 +68,33 @@ class PemesananKamarController extends Controller
 
         $params = array(
             'transaction_details' => array(
-                'order_id' => $order->pemesanan_id,
+                'order_id' => $order->order_id,
                 'gross_amount' => $order->harga,
             ),
             'customer_details' => array(
                 'name' => $request->name,
-                // 'phone' => $request->phone,
             ),
         );
 
         $snapToken = \Midtrans\Snap::getSnapToken($params);
         // dd($snapToken);
-        return view('pembayaran-kamar.tes', compact('snapToken', 'order'));
+        return view('pembayaran-kamar.index', compact('snapToken', 'order'));
+    }
 
-        // return redirect('/pemesanan-kamar')
-        //     ->with('success', 'Pemesanan kamar berhasil')
-        //     ->with('snapToken', $snapToken)
-        //     ->with('order', $order);
+    public function update(Request $request, string $id)
+    {
+
+        PenghuniModel::where('user', $id)->update([
+            'dibooking_sampai' => now(),
+            'status' => 'tidak aktif'
+        ]);
+
+        PemesananModel::where('user', $id)->update([
+            'dibooking_sampai' => now(),
+            'status' => 'tidak aktif'
+        ]);
+
+        return redirect('/kamar')->with('success', 'Data Kamar berhasil diubah');
     }
 
     public function callback(Request $request)
@@ -100,8 +103,37 @@ class PemesananKamarController extends Controller
         $hashed = hash("sha512", $request->order_id . $request->status_code . $request->gross_amount . $serverKey);
         if ($hashed == $request->signature_key) {
             if (($request->transaction_status == 'capture' && $request->payment_type == 'credit_card' && $request->fraud_status == 'accept') or $request->transaction_status == 'settlement') {
-                $order = PemesananModel::find($request->order_id);
+
+
+                $order = OrderModel::find($request->order_id);
                 $order->update(['status' => 'Paid']);
+
+                PenghuniModel::updateOrCreate(
+                    ['user' => $order->user], // Kondisi untuk mengecek apakah user sudah ada
+                    [
+                        'kamar' => $order->kamar,
+                        'dibooking_sampai' => $order->dibooking_sampai,
+                        'tanggal_pemesanan' => $order->tanggal_pemesanan,
+                        'status' => 'aktif',
+                    ]
+                );
+
+                // Update tanggal dibooking_sampai di tabel kamar
+                KamarModel::where('kamar_id', $order->kamar)->update(['dibooking_sampai' => $order->dibooking_sampai]);
+
+                PemesananModel::updateOrCreate(
+                    [
+                        'user' => $order->user,
+                    ], // Kondisi untuk mengecek apakah user dan kamar sudah ada
+                    [
+                        'kamar' => $order->kamar,
+                        'harga' => $order->harga,
+                        'total_tinggal' => $order->total_tinggal,
+                        'dibooking_sampai' => $order->dibooking_sampai,
+                        'tanggal_pemesanan' => $order->tanggal_pemesanan,
+                        'status' => 'aktif',
+                    ]
+                );
             }
         }
     }
