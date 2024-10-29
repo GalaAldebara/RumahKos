@@ -132,15 +132,9 @@
                     </div>
                 </div>
 
-                <!-- Password -->
-                {{-- <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Ganti password jika anda ingin mengubah">
-                </div> --}}
 
                 <!-- Action Buttons -->
                 <div class="d-flex justify-content-between mt-4">
-                    {{-- <a href="{{ url()->previous() }}" class="btn btn-outline-secondary">Cancel</a> --}}
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </form>
