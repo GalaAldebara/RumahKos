@@ -93,11 +93,12 @@ class PemesananKamarController extends Controller
             'status' => 'tidak aktif'
         ]);
 
+        $kamarIds = PemesananModel::where('user', $id)->pluck('kamar')->toArray();
         PemesananModel::where('user', $id)->update([
             'dibooking_sampai' => now(),
             'status' => 'tidak aktif'
         ]);
-        PemesananModel::where('kamar_id', $id)->update([
+        KamarModel::where('kamar_id', $kamarIds)->update([
             'dibooking_sampai' => now(),
         ]);
 
