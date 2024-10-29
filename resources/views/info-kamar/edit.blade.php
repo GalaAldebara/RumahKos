@@ -6,29 +6,47 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Edit Kamar Kos</h5>
-                <form action="/kamar/{{ $data->kamar_id }}" method="POST">
+                <form action="/kamar/{{ $data->kamar_id }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
+
                     <div class="mb-3">
-                        <label for="nama" class="form-label">nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama" value="{{ old('nama', $data->nama)}}" required>
+                        <label for="nama" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama" value="{{ old('nama', $data->nama) }}" required>
                     </div>
 
                     <div class="mb-3">
-                        <label for="deskripsi" class="form-label">deskripsi</label>
-                        <input type="text" class="form-control" id="deskripsi" name="deskripsi" value="{{ old('deskripsi', $data->deskripsi)}}" required>
+                        <label for="deskripsi" class="form-label">Deskripsi</label>
+                        <input type="text" class="form-control" id="deskripsi" name="deskripsi" value="{{ old('deskripsi', $data->deskripsi) }}" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="luas" class="form-label">Luas</label>
+                        <input type="text" class="form-control" id="luas" name="luas" value="{{ old('luas', $data->luas) }}" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="fasilitas" class="form-label">Fasilitas</label>
+                        <input type="text" class="form-control" id="fasilitas" name="fasilitas" value="{{ old('fasilitas', $data->fasilitas) }}" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="harga" class="form-label">Harga</label>
+                        <input type="number" class="form-control" id="harga" name="harga" value="{{ old('harga', $data->harga) }}" required>
                     </div>
                     <div class="mb-3">
-                        <label for="luas" class="form-label">luas</label>
-                        <input type="text" class="form-control" id="luas" name="luas" value="{{ old('luas', $data->luas)}}" required>
+                        <label for="image1" class="form-label">Gambar Kamar Tidur 1</label>
+                        <input type="file" class="form-control" id="image1" name="image1" accept="image/*">
                     </div>
+
                     <div class="mb-3">
-                        <label for="fasilitas" class="form-label">fasilitas</label>
-                        <input type="text" class="form-control" id="fasilitas" name="fasilitas" value="{{ old('fasilitas', $data->fasilitas)}}" required>
+                        <label for="image2" class="form-label">Gambar Kamar Tidur 2</label>
+                        <input type="file" class="form-control" id="image2" name="image2" accept="image/*">
                     </div>
+
                     <div class="mb-3">
-                        <label for="harga" class="form-label">harga</label>
-                        <input type="number" class="form-control" id="harga" name="harga" value="{{ old('harga', $data->harga)}}" required>
+                        <label for="image3" class="form-label">Gambar Kamar Mandi</label>
+                        <input type="file" class="form-control" id="image3" name="image3" accept="image/*">
                     </div>
 
                     <div class="mb-3">

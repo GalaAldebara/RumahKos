@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use AzisHapidin\IndoRegion\IndoRegion;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\LoginController;
@@ -13,11 +14,11 @@ use App\Http\Controllers\HistoriController;
 use App\Http\Controllers\IndoregionController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\UpdateProfilController;
+use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\PemesananKamarController;
 use App\Http\Controllers\PembayaranKamarController;
 use App\Http\Controllers\PengunduranDiriController;
 use App\Http\Controllers\PerpanjanganKontrakController;
-use AzisHapidin\IndoRegion\IndoRegion;
 
 
 Route::get('/register', function () {
@@ -28,6 +29,10 @@ Route::get('/dashboard', function () {
 });
 Route::get('/contract', function () {
     return view('contract/index');
+});
+
+Route::get('/404', function () {
+    return view('pembayaran-kamar/404');
 });
 
 Route::get('/kamar', [KamarController::class, 'index']);

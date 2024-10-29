@@ -5,9 +5,8 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-8">
-
-            <h5 class="fw-semibold" style="color: #5bb6e8;">Informasi Penyewa</h5>
-            <ul class="list-unstyled">
+            <h3 class="fw-semibold" style="color: #5bb6e8; font-size: 26px;">Informasi Penyewa</h3>
+            <ul class="list-unstyled" style="font-size: 16px;">
                 <li>
                     <strong>Nama penyewa</strong>
                     <br>
@@ -44,10 +43,10 @@
         <div class="col-md-4">
             <div class="card mb-3">
                 <img src="{{ asset('images/products/kamar1.png') }}" class="card-img-top" alt="Kost Image">
-                <div class="card-body">
-                    <h6 class="fw-bold">Kost Putra</h6>
-                    <p class="mb-1">{{ $order->getkamar->nama}}</p>
-                    <p class="text-muted small">WiFi • Kasur • Air • K. Mandi Dalam</p>
+                <div class="card-body  text-start">
+                    <h6 class="fw-bold" style="font-size: 24px;">Kost Putra</h6> <!-- Increased font size -->
+                    <p class="mb-1" style="font-size: 18px;">{{ $order->getkamar->nama}}</p> <!-- Increased font size -->
+                    <p class="text-muted small" style="font-size: 16px;">WiFi • Kasur • Air • K. Mandi Dalam</p> <!-- Optional: Adjust size if needed -->
                 </div>
             </div>
             <div class="card p-3">
