@@ -25,7 +25,7 @@ Route::get('/register', function () {
     return view('login/index2');
 });
 Route::get('/dashboard', function () {
-    return view('dashboard/index');
+    return view('dashboard-admin/index');
 });
 Route::get('/contract', function () {
     return view('contract/index');

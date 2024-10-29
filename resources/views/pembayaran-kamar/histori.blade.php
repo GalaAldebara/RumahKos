@@ -1,13 +1,13 @@
 @extends('layouts.main')
 
 @section('container')
-@if (!empty($data))
+@if ($data)
 <div class="row">
     <div class="col-lg-12 d-flex align-items-stretch">
       <div class="card w-100">
         <div class="card-body p-4">
           <h5 class="card-title fw-semibold mb-3">Histori Pembayaran</h5>
-         
+
           <div class="table-responsive">
             <table class="table text-nowrap mb-0 align-middle">
 
@@ -58,7 +58,7 @@
                   </td>
                   <td class="border-bottom-0">
                     <a href="/histori/{{ $d->order_id }}" class="btn btn-warning">Detail</a>
-                    
+
                   </td>
                 </tr>
                 @endforeach
@@ -98,13 +98,13 @@
           margin-top: 5px;
       }
   </style>
-  
+
   <div class="error-page">
       <div class="error-container">
           <h1 class="error-title">Ups, Halaman Tidak Ditemukan!</h1>
           <p class="error-message">Kamar Yang Anda Cari Tidak Ditemukan</p>
           <a href="{{ url('pemesanan-kamar') }}" class="btn btn-primary">Pesan Kamar!</a>
       </div>
-  </div>
+</div>
   @endif
 @endsection
