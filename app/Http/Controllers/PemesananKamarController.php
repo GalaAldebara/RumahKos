@@ -37,6 +37,8 @@ class PemesananKamarController extends Controller
             'total_tinggal' => 'required|integer|min:1',
         ]);
 
+        // dd($validatedData);
+
         $validatedData['harga'] = $validatedData['total_tinggal'] * $validatedData['harga'];
 
         // PemesananModel::create($validatedData);
@@ -53,7 +55,8 @@ class PemesananKamarController extends Controller
             'total_tinggal' => $totalTinggal,
             'dibooking_sampai' => $dibookingSampai,
             'tanggal_pemesanan' => $tanggalPemesanan,
-            'status' => 'Unpaid'
+            'status' => 'Unpaid',
+            'jenis' => $validatedData['jenis'],
         ]);
 
         // Set your Merchant Server Key
@@ -84,6 +87,7 @@ class PemesananKamarController extends Controller
     public function update(Request $request, string $id)
     {
 
+
         PenghuniModel::where('user', $id)->update([
             'dibooking_sampai' => now(),
             'status' => 'tidak aktif'
@@ -93,8 +97,12 @@ class PemesananKamarController extends Controller
             'dibooking_sampai' => now(),
             'status' => 'tidak aktif'
         ]);
+        PemesananModel::where('kamar_id', $id)->update([
+            'dibooking_sampai' => now(),
+        ]);
 
-        return redirect('/kamar')->with('success', 'Data Kamar berhasil diubah');
+
+        return redirect('/detail-kamar')->with('success', 'Data Kamar berhasil diubah');
     }
 
     public function callback(Request $request)

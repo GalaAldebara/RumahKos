@@ -30,7 +30,7 @@
                                     
                                 <button id="bookingButton" class="btn btn-primary btn-lm" data-bs-toggle="modal" data-bs-target="#bookingModal" data-id="{{ $d->kamar_id }}" data-harga="{{ $d->harga }}" disabled>Pesan</button>
                                 @else
-                                <button id="bookingButton" class="btn btn-primary btn-lm" data-bs-toggle="modal" data-bs-target="#bookingModal" data-id="{{ $d->kamar_id }}" data-harga="{{ $d->harga }}">Pesan</button>
+                                <button id="bookingButton" class="btn btn-primary btn-lm" data-bs-toggle="modal" data-bs-target="#bookingModal" data-kamar_id="{{ $d->kamar_id }}" data-harga="{{ $d->harga }}">Pesan {{ $d->kamar_id }}</button>
                                 @endif
 
                                 <a href="/detail-kamar/{{ $d->kamar_id }}" class="btn btn-secondary btn-lm">Detail</a> 
@@ -61,7 +61,7 @@
                         <form id="bookingForm" action="/pemesanan-kamar/create" method="POST">
                             @csrf
                             <input type="hidden" name="user" value="{{ Auth::user()->user_id }}">
-                            <input type="hidden" name="jenis" value="Perpanjang">
+                            <input type="hidden" name="jenis" value="Sewa">
                             <input type="hidden" name="name" value="{{ Auth::user()->nama_depan }}">
                             <input type="hidden" name="kamar" value="{{ $d->kamar_id }}">
                             <input type="hidden" name="harga" value="{{ $d->harga }}">
@@ -122,17 +122,27 @@
 @endsection
 
 @push('scripts')
+@push('scripts')
 <script>
-    document.getElementById('bookingButton').addEventListener('click', function(event) {
-        // Mengambil user data
-        const userKtp = '{{ Auth::user()->ktp }}';
-        const userDataEmpty = !userKtp; // Cek jika nik kosong, tambahkan cek untuk data lain jika perlu
+    document.querySelectorAll('#bookingButton').forEach(button => {
+        button.addEventListener('click', function() {
+            // Ambil kamar_id dan harga dari tombol yang diklik
+            const kamarId = this.getAttribute('data-kamar_id');
+            const harga = this.getAttribute('data-harga');
+            
+            // Isi input hidden dalam modal dengan data yang relevan
+            document.querySelector('#bookingForm input[name="kamar"]').value = kamarId;
+            document.querySelector('#bookingForm input[name="harga"]').value = harga;
 
-        // Jika nik kosong, arahkan ke /update-profil
-        if (userDataEmpty) {
-            event.preventDefault(); // Mencegah aksi default tombol
-            window.location.href = '/update-profil'; // Arahkan ke halaman update profil
-        }
+            // Cek jika user data KTP kosong
+            const userKtp = '{{ Auth::user()->ktp }}';
+            const userDataEmpty = !userKtp;
+
+            if (userDataEmpty) {
+                // Redirect ke halaman update profil jika user KTP kosong
+                window.location.href = '/update-profil';
+            }
+        });
     });
 </script>
 @endpush

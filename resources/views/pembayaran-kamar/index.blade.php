@@ -25,12 +25,12 @@
                 <li>
                     <strong>Tanggal Mulai</strong>
                     <br>
-                    <span>{{ date('d F Y', strtotime($data->tanggal_pemesanan)) }}</span>
+                    <span>{{ date('d F Y', strtotime($order->tanggal_pemesanan)) }}</span>
                 </li>
                 <li>
                     <strong>Tanggal Selesai</strong>
                     <br>
-                    <span>{{ date('d F Y', strtotime($data->dibooking_sampai ?? now())) }}</span>
+                    <span>{{ date('d F Y', strtotime($order->dibooking_sampai ?? now())) }}</span>
                 </li>
                 <li>
                     <strong>Status</strong>
@@ -54,7 +54,7 @@
                 <p class="text-muted small">Akan diarahkan ke halaman detail kamar setelah pembayaran</p>
                 <div class="d-flex justify-content-between">
                     <p>Biaya sewa kos</p>
-                    <p>Rp{{ number_format($kamar->getkamar->harga, 0, ',', '.') }}</p>
+                    <p>Rp{{ number_format($order->getkamar->harga, 0, ',', '.') }}</p>
                 </div>
 
                 <div class="d-flex justify-content-between">
@@ -91,7 +91,7 @@
         onSuccess: function (result) {
           /* You may add your own implementation here */
          // alert("payment success!"); console.log(result);
-        window.location.href = '/histori'
+        window.location.href = '/detail-kamar'
         },
         onPending: function (result) {
           /* You may add your own implementation here */

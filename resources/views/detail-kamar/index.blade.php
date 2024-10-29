@@ -105,7 +105,7 @@
                     <input type="hidden" name="user" value="{{ Auth::user()->user_id }}">
                             <input type="hidden" name="name" value="{{ Auth::user()->nama_depan }}">
                             <input type="hidden" name="kamar" value="{{ $data->kamar }}">
-                            <input type="hidden" name="jenis" value="Sewa">
+                            <input type="hidden" name="jenis" value="Perpanjang">
                             <input type="hidden" name="harga" value="{{ $data->getkamar->harga }}">
                     @endif
 
