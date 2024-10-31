@@ -25,7 +25,7 @@ Route::get('/register', function () {
     return view('login/index2');
 });
 Route::get('/dashboard', function () {
-    return view('dashboard/index');
+    return view('dashboard-admin/index');
 });
 Route::get('/contract', function () {
     return view('contract/index');
@@ -68,10 +68,6 @@ Route::put('/update-profil/{id}', [UpdateProfilController::class, 'update']);
 
 Route::get('/income', [PemasukanController::class, 'index']);
 Route::get('/income/{id}', [PemasukanController::class, 'show']);
-
-
-
-
 
 
 // Route::get('/tes', [PemesananKamarController::class, 'index']);
