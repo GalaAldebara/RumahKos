@@ -24,19 +24,19 @@ class GoogleAuthController extends Controller
             if (!$user) {
                 $new_user = User::create([
                     'username' => $google_user->getNickname(),
-                    'nama' => $google_user->getName(),
+                    'nama_depan' => $google_user->getName(),
                     'email' => $google_user->getEmail(),
                     'google_id' => $google_user->getId(),
-                    'level_id' => 3,
+                    'level_id' => 2,
                 ]);
 
                 Auth::login($new_user);
 
-                return redirect()->intended('dashboard');
+                return redirect()->intended('/pemesanan-kamar');
             } else {
                 Auth::login($user);
 
-                return redirect()->intended('dashboard');
+                return redirect()->intended('/pemesanan-kamar');
             }
         } catch (\Throwable $th) {
             dd('something went wrong wrong' . $th->getMessage());
