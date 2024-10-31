@@ -21,10 +21,10 @@
                         {{ $errors->first('registration_error') }}
                     </div>
                 @endif
-
                 <div class="google-login mb-3">
-                    <a href="{{ route('google-auth') }}" class="d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('images/logos/google.jpeg') }}" alt="Google Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                    <a href="{{ route('google-auth') }}" class="google-signup-button">
+                        <img src="{{ asset('images/logos/google.jpeg') }}" alt="Google Logo" class="google-logo">
+                        <span>Sign up with Google</span>
                     </a>
                 </div>
                 <span>Buat username atau daftar menggunakan google</span>
@@ -42,8 +42,9 @@
                 {{-- <img src="{{ asset('images/logos/matoangin.png') }}" alt="Matoangin Logo" class="logo"> --}}
                 <h1>Sign In Disini!</h1>
                 <div class="google-login mb-3">
-                    <a href="{{ route('google-auth') }}" class="d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('images/logos/google.jpeg') }}" alt="Google Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                    <a href="{{ route('google-auth') }}" class="google-signin-button">
+                        <img src="{{ asset('images/logos/google.jpeg') }}" alt="Google Logo" class="google-logo">
+                        <span>Sign in with Google</span>
                     </a>
                 </div>
 
