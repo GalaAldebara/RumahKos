@@ -42,6 +42,11 @@
             @endforeach
         </div>
     </div>
+    <div class="col-lg-12 mt-2">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15804.838055717397!2d112.6233347!3d-7.9772848!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd628212d067cef%3A0x5b62e516fe60f2b8!2sMall%20Olympic%20Garden!5e0!3m2!1sid!2sid!4v1730364641626!5m2!1sid!2sid" 
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
 </div>
 
 <!-- Modal untuk booking -->

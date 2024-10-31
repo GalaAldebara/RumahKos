@@ -7,6 +7,7 @@ use App\Models\Province;
 use App\Models\Regency;
 use App\Models\District;
 use App\Models\Village;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -16,7 +17,11 @@ class IndoregionController extends Controller
     {
         $provinces = Province::all();
 
-        return view('form', compact('provinces'));
+        $kabupatens = Regency::where('province_id', Auth::user()->provinsi)->get();
+        $kecamatans = District::where('regency_id', Auth::user()->kabupaten)->get();
+        $desas = Village::where('district_id', Auth::user()->kecamatan)->get();
+
+        return view('form', compact('provinces', 'kabupatens', 'kecamatans', 'desas'));
     }
 
     public function getkabupaten(Request $request)

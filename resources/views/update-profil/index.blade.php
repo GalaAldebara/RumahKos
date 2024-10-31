@@ -9,7 +9,7 @@
             <div class="text-center mb-4">
                 <img src="{{ asset('images/profile/icon-profile.png') }}" alt="User Profile" class="rounded-circle profile-picture">
             </div>
-            <form action="/update-profil/{{ $user->user_id }}" method="POST" enctype="multipart/form-data">
+            <form action="/update-profil/{{ Auth::user()->user_id }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
@@ -97,38 +97,53 @@
 
                 <div class="row mb-3">
                     <div class="col-md-6">
-                        <label for="provinsi" class="form-label">provinsi</label>
-                        <select class="form-control" id="provinsi" aria-label="Default select example" name="provinsi">
-                        <option>Pilih provinsi</option>
-                        @foreach ($provinces as $provinsi)
-                            <option value="{{ $provinsi->id }}">{{ $provinsi->name }}</option>
-                        @endforeach
-                  </select>
+                        <label for="provinsi" class="form-label">Provinsi</label>
+                        <select class="form-control" id="provinsi" name="provinsi">
+                            <option>Pilih Provinsi</option>
+                            @foreach ($provinces as $provinsi)
+                                <option value="{{ $provinsi->id }}" {{ $user->provinsi == $provinsi->id ? 'selected' : '' }}>
+                                    {{ $provinsi->name }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="col-md-6">
                         <label for="kabupaten" class="form-label">Kota / Kabupaten</label>
-                        <select class="form-control" id="kabupaten" aria-label="Default select example" name="kota">
-                            <option >Pilih Kota / Kabupaten</option>
+                        <select class="form-control" id="kabupaten" name="kabupaten">
+                            <option>Pilih Kota / Kabupaten</option>
+                            @foreach ($kabupatens as $kabupaten)
+                                <option value="{{ $kabupaten->id }}" {{ $user->kota == $kabupaten->id ? 'selected' : '' }}>
+                                    {{ $kabupaten->name }}
+                                </option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="kecamatan" class="form-label">Kecamatan</label>
-                        <select class="form-control" id="kecamatan" aria-label="Default select example" name="kecamatan">
+                        <select class="form-control" id="kecamatan" name="kecamatan">
                             <option>Pilih Kecamatan</option>
-
-                          </select>
-                  </select>
+                            @foreach ($kecamatans as $kecamatan)
+                                <option value="{{ $kecamatan->id }}" {{ $user->kecamatan == $kecamatan->id ? 'selected' : '' }}>
+                                    {{ $kecamatan->name }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="col-md-6">
                         <label for="desa" class="form-label">Kelurahan</label>
-                        <select class="form-control" id="desa" aria-label="Default select example" name="kelurahan">
+                        <select class="form-control" id="desa" name="desa">
                             <option>Pilih Kelurahan</option>
-
+                            @foreach ($desas as $desa)
+                                <option value="{{ $desa->id }}" {{ $user->kelurahan == $desa->id ? 'selected' : '' }}>
+                                    {{ $desa->name }}
+                                </option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
+                
 
 
                 <!-- Action Buttons -->

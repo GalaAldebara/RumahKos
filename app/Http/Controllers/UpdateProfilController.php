@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Province;
 use App\Models\User;
+use App\Models\Province;
+use App\Models\Regency;
+use App\Models\District;
+use App\Models\Village;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -17,7 +20,13 @@ class UpdateProfilController extends Controller
         $user = Auth::user();
         $provinces = Province::all();
 
-        return view('update-profil.index', compact('user', 'provinces'));
+
+
+        $kabupatens = Regency::all();
+        $kecamatans = District::all();
+        $desas = Village::all();
+
+        return view('update-profil.index', compact('user', 'provinces', 'kabupatens', 'kecamatans', 'desas'));
     }
 
     public function update(Request $request, string $id)
@@ -30,13 +39,28 @@ class UpdateProfilController extends Controller
             'alamat' => 'required',
             'no_telp' => 'required',
             'provinsi' => 'required',
-            'kota' => 'required',
+            'kabupaten' => 'required',
             'kecamatan' => 'required',
-            'kelurahan' => 'required',
+            'desa' => 'required',
         ]);
 
-        // $user = User::find($id);
-        // $namaFile = 'profile' . $user->user_id;
+        // dd($request->all());
+
+        User::find($id)->update([
+            'nama_depan' => $request->nama_depan,
+            'nama_belakang' => $request->nama_belakang,
+            'nik' => $request->nik,
+            'email' => $request->email,
+            'alamat' => $request->alamat,
+            'no_telp' => $request->no_telp,
+            'provinsi' => $request->provinsi,
+            'kota' => $request->kabupaten,
+            'kecamatan' => $request->kecamatan,
+            'kelurahan' => $request->desa,
+        ]);
+
+        // dd($request->all());
+
 
         $user = User::find($id);
         $namaFile = $user->ktp;
@@ -60,6 +84,7 @@ class UpdateProfilController extends Controller
             ]);
         }
 
+
         User::find($id)->update([
             'nama_depan' => $request->nama_depan,
             'nama_belakang' => $request->nama_belakang,
@@ -67,10 +92,10 @@ class UpdateProfilController extends Controller
             'email' => $request->email,
             'alamat' => $request->alamat,
             'no_telp' => $request->no_telp,
-            'kota' => $request->kota,
             'provinsi' => $request->provinsi,
+            'kota' => $request->kabupaten,
             'kecamatan' => $request->kecamatan,
-            'kelurahan' => $request->kelurahan,
+            'kelurahan' => $request->desa,
             'ktp' => $namaFile,
         ]);
 
