@@ -43,8 +43,8 @@
         </div>
     </div>
     <div class="col-lg-12 mt-2">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15804.838055717397!2d112.6233347!3d-7.9772848!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd628212d067cef%3A0x5b62e516fe60f2b8!2sMall%20Olympic%20Garden!5e0!3m2!1sid!2sid!4v1730364641626!5m2!1sid!2sid" 
-                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.35149646171!2d112.6097655!3d-7.962579500000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78827d61f3f4b5%3A0x89b638d952967954!2sJl.%20Candi%20Blk.%20II%20A%20No.540%2C%20Karangbesuki%2C%20Kec.%20Sukun%2C%20Kota%20Malang%2C%20Jawa%20Timur%2065149!5e0!3m2!1sid!2sid!4v1730453445526!5m2!1sid!2sid"  width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     
 </div>
