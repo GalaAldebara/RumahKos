@@ -27,13 +27,13 @@
                                 <button class="btn btn-danger btn-lm" disabled>Terpesan</button>
                             @else
                                 @if ($hasActiveStatus)
-                                    
+
                                 <button id="bookingButton" class="btn btn-primary btn-lm" data-bs-toggle="modal" data-bs-target="#bookingModal" data-id="{{ $d->kamar_id }}" data-harga="{{ $d->harga }}" disabled>Pesan</button>
                                 @else
                                 <button id="bookingButton" class="btn btn-primary btn-lm" data-bs-toggle="modal" data-bs-target="#bookingModal" data-kamar_id="{{ $d->kamar_id }}" data-harga="{{ $d->harga }}">Pesan</button>
                                 @endif
 
-                                <a href="/detail-kamar/{{ $d->kamar_id }}" class="btn btn-secondary btn-lm">Detail</a> 
+                                <a href="/detail-kamar/{{ $d->kamar_id }}" class="btn btn-secondary btn-lm">Detail</a>
                             @endif
                         </div>
                     </div>
@@ -43,10 +43,9 @@
         </div>
     </div>
     <div class="col-lg-12 mt-2">
-        
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.35149646171!2d112.6097655!3d-7.962579500000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78827d61f3f4b5%3A0x89b638d952967954!2sJl.%20Candi%20Blk.%20II%20A%20No.540%2C%20Karangbesuki%2C%20Kec.%20Sukun%2C%20Kota%20Malang%2C%20Jawa%20Timur%2065149!5e0!3m2!1sid!2sid!4v1730453445526!5m2!1sid!2sid"  width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-    
+
 </div>
 
 <!-- Modal untuk booking -->
@@ -70,8 +69,8 @@
                             <input type="hidden" name="name" value="{{ Auth::user()->nama_depan }}">
                             <input type="hidden" name="kamar" value="{{ $d->kamar_id }}">
                             <input type="hidden" name="harga" value="{{ $d->harga }}">
-                          
-                          
+
+
                             <div class="mb-3">
                                 <label for="tanggal" class="form-label mt-3">Pilih Tanggal</label>
                                 <input type="date" id="tanggal" class="form-control" name="tanggal" min="<?php echo date('Y-m-d'); ?>"   max="<?php echo date('Y-m-d', strtotime('+1 week')); ?>">
@@ -85,7 +84,7 @@
                                     <option value="9">Per 9 Bulan</option>
                                     <option value="12">Per Tahun</option>
                                 </select>
-                                
+
                             </div>
 
                             <button type="submit" class="btn btn-success" style="background-color:#6986fd">Kirim Pesanan</button>
@@ -134,7 +133,7 @@
             // Ambil kamar_id dan harga dari tombol yang diklik
             const kamarId = this.getAttribute('data-kamar_id');
             const harga = this.getAttribute('data-harga');
-            
+
             // Isi input hidden dalam modal dengan data yang relevan
             document.querySelector('#bookingForm input[name="kamar"]').value = kamarId;
             document.querySelector('#bookingForm input[name="harga"]').value = harga;
