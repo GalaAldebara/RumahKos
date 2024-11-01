@@ -16,7 +16,7 @@
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="nama_depan" class="form-label">Nama Depan</label>
-                        <input type="text" class="form-control @error('nama_depan') is-invalid @enderror" id="nama_depan" name="nama_depan" value="{{ old('nama_depan', $user->nama_depan ?? '') }}" required>
+                        <input type="text" class="form-control @error('nama_depan') is-invalid @enderror" id="nama_depan" name="nama_depan" value="{{ old('nama_depan', $user->nama_depan ?? '') }}" required placeholder="Masukkan Nama Depan">
                         @error('nama_depan')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -26,7 +26,7 @@
 
                     <div class="col-md-6">
                         <label for="nama_belakang" class="form-label">Nama Belakang</label>
-                        <input type="text" class="form-control @error('nama_belakang') is-invalid @enderror" id="nama_belakang" name="nama_belakang" value="{{ old('nama_belakang', $user->nama_belakang ?? '') }}" required>
+                        <input type="text" class="form-control @error('nama_belakang') is-invalid @enderror" id="nama_belakang" name="nama_belakang" value="{{ old('nama_belakang', $user->nama_belakang ?? '') }}" required placeholder="Masukkan Nama Belakang">
                         @error('nama_belakang')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -38,7 +38,7 @@
                     <label for="nik" class="form-label">NIK</label>
                     <input type="text" class="form-control @error('nik') is-invalid @enderror"
                            id="nik" name="nik" value="{{ old('nik', $user->nik ?? '') }}"
-                           required placeholder="35730500010002" oninput="checkNIKLength()">
+                           required placeholder="Masukkan NIK" oninput="checkNIKLength()">
                     <small id="nikFeedback" class="form-text text-muted"></small>
                     @error('nik')
                     <div class="invalid-feedback">
@@ -48,7 +48,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email', $user->email ?? '') }}" required placeholder=" anggayunanda@gmail.com">
+                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email', $user->email ?? '') }}" required placeholder="Masukkan Email">
                     @error('email')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -57,7 +57,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="alamat" class="form-label">Alamat</label>
-                    <input type="text" class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat" value="{{ old('alamat', $user->alamat ?? '') }}" placeholder= "Jl. Semanggi Barat">
+                    <input type="text" class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat" value="{{ old('alamat', $user->alamat ?? '') }}" placeholder= "Masukkan Alamat">
                     @error('alamat')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -66,7 +66,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="no_telp" class="form-label">No telp</label>
-                    <input type="text" class="form-control @error('no_telp') is-invalid @enderror" id="no_telp" name="no_telp" value="{{ old('no_telp', $user->no_telp ?? '') }}" placeholder="+62 85816178961">
+                    <input type="text" class="form-control @error('no_telp') is-invalid @enderror" id="no_telp" name="no_telp" value="{{ old('no_telp', $user->no_telp ?? '') }}" placeholder="Masukkan No.Telp">
                     @error('no_telp')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -143,7 +143,7 @@
                         </select>
                     </div>
                 </div>
-                
+
 
 
                 <!-- Action Buttons -->
